@@ -1,4 +1,4 @@
-package com.algo.recursion;
+package com.ik.sort.tt;
 
 public class isPal {
 

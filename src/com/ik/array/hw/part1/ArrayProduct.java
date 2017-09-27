@@ -7,9 +7,6 @@ public class ArrayProduct {
 		
 		int[] a = {1, 2, 3, 4, 5};
 		printArray(productArray(a));
-		
-		
-
 	}
 	
 	//Input : [1, 2, 3, 4, 5]	 Output: [(2*3*4*5), (1*3*4*5), (1*2*4*5), (1*2*3*5), (1*2*3*4)]

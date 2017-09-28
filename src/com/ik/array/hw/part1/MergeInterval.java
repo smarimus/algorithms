@@ -1,9 +1,16 @@
 package com.ik.array.hw.part1;
 
+import java.util.Arrays;
+
 public class MergeInterval {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		String[] ar =  { "6,8", "1,9", "2,4", "4,7" };
+	    Arrays.sort(ar);
+	    
+	    System.out.println(ar);
 
 	}
 	
@@ -11,7 +18,6 @@ public class MergeInterval {
 		
 		int[] results = new int[a.length];
 		for (int i = 0; i < results.length; i++) {
-			
 			
 		}
 		
@@ -38,10 +44,4 @@ public class MergeInterval {
 	newStart > end
 		add (start and end) into array
 		keep the newStart and newEnd as start and end*/
-		
-	
-	
-		
-		
-
 }

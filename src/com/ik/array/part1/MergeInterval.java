@@ -1,7 +1,6 @@
-package com.ik.array.hw.part1;
+package com.ik.array.part1;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Stack;
 
 public class MergeInterval {
@@ -57,6 +56,7 @@ public class MergeInterval {
 		pair1[0]=newStart; pair1[1] = newEnd;
 		return pair1;
 	}
+}
 
 	/*List<String> al = new ArrayList<String>();
 	String pair = a[0]; String[] pairs =pair.split(",");
@@ -87,4 +87,4 @@ public class MergeInterval {
 		keep the newStart and newEnd as start and end*/
 	
 	// "1,3", "2,4", "5,7", "6,8"
-}
+

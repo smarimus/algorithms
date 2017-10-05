@@ -6,18 +6,14 @@ public class PermuteString {
 		// TODO Auto-generated method stub
 
 	}
-	
-	
 	static void permute(char[] a, int i ){
 		
 		int n = a.length;
-		
 		//base case
 		if(i == n-1){
 			System.out.println(a);
 			return ;
 		}
-		
 		for (int j = i; j < n-1; j++) {
 			swap(a, i, j);
 			permute(a, i+1);

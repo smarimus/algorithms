@@ -1,4 +1,4 @@
-package com.ik.array.hw.part1;
+package com.ik.array.part1;
 
 public class ArrayProduct {
 

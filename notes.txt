@@ -1,0 +1,12 @@
+Find the median 
+
+1. Arbitrary node
+	traverse to find the minimum node ( currentNode > Next Node )
+	
+	Know the start pointer
+	keep going to find the length;
+
+2. Traverse from the start to n/2 or n/2 +1 
+
+Find the colliding node
+	

@@ -18,7 +18,7 @@ public class Permutation {
 	   List<List<Integer>> list = new ArrayList<List<Integer>>();
 	   List<Integer> tempList = new ArrayList<Integer>();
 	   int[] nums = {1,2,3,4};
-	   //backtrack(list, tempList, nums);
+	   backtrack(list, tempList, nums);
 	   permutation(nums, 0);
 	   System.out.println(list);
    }

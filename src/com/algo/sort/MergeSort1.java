@@ -10,6 +10,10 @@ public class MergeSort1 {
 		int[] a1 = {5, 4, 7 , 2, 6, 1, 3};
 		sort(a1, 0, a1.length-1);
 		printArray(a1);
+		System.out.println(2/2);
+		System.out.println(0/2);
+		System.out.println(1/2);
+		
 	}
 	
 	static void sort(int a[], int start, int end){

@@ -11,9 +11,7 @@ public class SearchSortedRotated {
 		//System.out.println(search(a, 0, a.length-1, 2));
 		
 		int[] b = {4, 5, 1, 2, 3};
-		System.out.println(findMinimum(b));;
-		
-		
+		System.out.println(findMinimum(b));
 	}
 	
 	/*public static int searchInRotatedArray(int[] a, int start, int end){
@@ -29,9 +27,7 @@ public class SearchSortedRotated {
 		searchInRotatedArray(a, mid)
 	}*/
 	public static int search(int[] a, int start, int end, int k){
-		
 		int result = 0;
-		
 		if(start > end){
 			return -1;
 		}
@@ -49,12 +45,10 @@ public class SearchSortedRotated {
 	}
 	
 	static int findMinimum(int[] arr) {
-		
 		return findMin(arr, 0, arr.length-1);
     }
 	
 	static int findMin(int[] a, int low, int high) {
-    	
     	int mid = low+high;
     	
     	if (low < mid && mid < high && a[mid-1] > a[mid] ){

@@ -8,6 +8,7 @@ public class Atoi {
 		String[] s =  {"42",
 				"-3924x8fc",
 				"abc-843t" ,
+				"abc-sdsds843t" ,
 				"+1",
 				"c++", 
 				"++1",  // Tricky.

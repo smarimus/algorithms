@@ -36,7 +36,9 @@ public class isPal {
 		int len = s.length();
 		while(index < len ){
 			String c = Character.toString(s.charAt(index));
-			if(".".equals(c)  || ",".equals(c)|| "!".equals(c) || "-".equals(c) || ";".equals(c) || ":".equals(c) || "'".equals(c) || "\"".equals(c) || "".equals(c) || " ".equals(c)){
+			if(".".equals(c)  || ",".equals(c)|| "!".equals(c) || "-".equals(c)
+					|| ";".equals(c) || ":".equals(c) || "'".equals(c) || "\"".equals(c) 
+					|| "".equals(c) || " ".equals(c)){
 				index = index+1;
 			}else{
 				break;
@@ -49,7 +51,9 @@ public class isPal {
 		
 		while(index >= 0 ){
 			String c = Character.toString(s.charAt(index));
-			if(".".equals(c)  || ",".equals(c)|| "!".equals(c) || "-".equals(c) || ";".equals(c) || ":".equals(c) || "'".equals(c) || "\"".equals(c) || "".equals(c)|| " ".equals(c)){
+			if(".".equals(c)  || ",".equals(c)|| "!".equals(c) 
+					|| "-".equals(c) || ";".equals(c) || ":".equals(c) 
+					|| "'".equals(c) || "\"".equals(c) || "".equals(c)|| " ".equals(c)){
 				index = index-1;
 			}else{
 				break;
@@ -57,7 +61,6 @@ public class isPal {
 		}
 		return index;
 	}
-
 }
 
 

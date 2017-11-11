@@ -40,11 +40,9 @@ public class QuickSort {
 	   arr[] --> Array to be sorted,
 	   low  --> Starting index,
 	   high  --> Ending index */
-	 int sort(int arr[], int low, int high, int k)
-	 {
+	 int sort(int arr[], int low, int high, int k){
 		 int val=0;
-	     if (low < high)
-	     {
+	     if (low < high){
 	         /* pi is partitioning index, arr[pi] is 
 	           now at right place */
 	         int pi = partition(arr, low, high);
@@ -63,8 +61,7 @@ public class QuickSort {
 	 }
 	
 	 /* A utility function to print array of size n */
-	 static void printArray(int arr[])
-	 {
+	 static void printArray(int arr[]){
 	     int n = arr.length;
 	     for (int i=0; i<n; ++i)
 	         System.out.print(arr[i]+" ");
@@ -72,8 +69,7 @@ public class QuickSort {
 	 }
 	
 	 // Driver program
-	 public static void main(String args[])
-	 {
+	 public static void main(String args[]){
 		 int k = 9;
 		 
 	     int arr[] = {10, 7, 8, 9, 1, 5};
@@ -85,7 +81,4 @@ public class QuickSort {
 	     System.out.println("sorted array");
 	     printArray(arr);
 	 }
-	 
-	 
 }
-

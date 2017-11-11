@@ -1,4 +1,4 @@
-package com.algo.recursion;
+package com.ik.recursion.session;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,6 @@ public class Permutation {
 	}
 	
    public static List<List<Integer>> permute(int[] nums) {
-        
 	   return null;
     }
    
@@ -28,13 +27,18 @@ public class Permutation {
 	   if(tempList.size() == nums.length){
 	      list.add(new ArrayList<>(tempList));
 	   } else{
-	      for(int i = 0; i < nums.length; i++){ 
+	      for(int i = 0; i < nums.length; i++){
 	         if(tempList.contains(nums[i])) continue; // element already exists, skip
 	         tempList.add(nums[i]);
 	         backtrack(list, tempList, nums);
 	         tempList.remove(tempList.size() - 1);
 	      }
 	   }
-	} 
-
+	}
+   
+   private static void permutation(int [] num, int pos){
+	   
+	   
+   }
+   
 }

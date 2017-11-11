@@ -7,7 +7,9 @@ public class MergeSort1 {
 		int a[] = {3,4,5};
 		int b[] = {1,2,6,7};
 		
-		int[] a1 = {5, 4, 7 , 2, 6, 1, 3};
+		int[] a1a = {5, 4, 7 , 2, 6, 1, 3};
+		int[] a1 = {5, 4, 7 , 2, 6};
+		
 		sort(a1, 0, a1.length-1);
 		printArray(a1);
 		System.out.println(2/2);
@@ -38,7 +40,6 @@ public class MergeSort1 {
 		
 		int firstLen =  mid - start + 1 ;
 		int secondLen = end - mid;
-		
 		
 		int[] first = new int[firstLen];
 		for (int i = 0; i < firstLen; ++i) {

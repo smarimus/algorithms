@@ -4,11 +4,25 @@ public class EncodeDecodeString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s1 = "AAAAA";
-		String s = "BAAAB";
-		String s2 = "ABAB";
+		String s = "AAAAAb";
+		String s2 = "BAAAB";
+		String s3 = "ABAB";
+		String s4 = "a";
 		
 		System.out.println(compress(s));
+		System.out.println(compress(s2));
+		System.out.println(compress(s3));
+		System.out.println(compress(s4));
+		
+		String s5 = "5Ab";
+		String s6 = "B3AB";
+		String s7 ="ABAB";
+		String s8 ="a";
+		
+		System.out.println(deCompress(s));
+		System.out.println(deCompress(s2));
+		System.out.println(deCompress(s3));
+		System.out.println(deCompress(s8));
 	}
 	
 	static String compress(String s){
@@ -16,29 +30,50 @@ public class EncodeDecodeString {
 		StringBuffer sb = new StringBuffer();
 		
 		int count=1;
-		for (int i = 0; i < chArr.length-1; i++) {
+		for (int i = 0; i < chArr.length; i++) {
 			
 			char c = chArr[i];
-			if(c == chArr[i+1] ){
-				count++;
-				if(i+1 == chArr.length-1){
-					sb.append(count).append(c);
-				}
-				continue;
-				
+			while(i+1 < chArr.length && c == chArr[i+1] ){
+				count++; i++;
 			}
 			if(count > 1){
-				sb.append(count).append(c);
+				sb.append(count).append(c); count=0;
 			}else{
 				sb.append(c);
-				if(i+1 == chArr.length-1){sb.append(chArr[i+1]);}
 			}
 		}
 		return sb.toString();
-		
 	}
+	
+	static int parseInt(char s){
+		int result =0;
+		try{
+			String s1= Character.toString(s);
+			result = Integer.parseInt(s1);
+		}catch(Exception ex){
+		}
+		return result;
+	}
+	
 	static String deCompress(String s){
+		char[] chArr = s.toCharArray();
 		StringBuffer sb = new StringBuffer();
+		
+		for (int i = 0; i < chArr.length; i++) {
+			char val = chArr[i];
+			int count = parseInt(val);
+			
+			if(i+1 < chArr.length && count > 0){
+				char str = chArr[i+1];
+				
+				for (int j = 0; j < count; j++) {
+					sb.append(str);
+					i++;
+				}
+			}
+			
+			sb.append(val);
+		}
 		return sb.toString();
 	}
 }

@@ -18,8 +18,8 @@ public class Permutation {
 	   List<List<Integer>> list = new ArrayList<List<Integer>>();
 	   List<Integer> tempList = new ArrayList<Integer>();
 	   int[] nums = {1,2,3,4};
-	   backtrack(list, tempList, nums);
-	   
+	   //backtrack(list, tempList, nums);
+	   permutation(nums, 0);
 	   System.out.println(list);
    }
    
@@ -36,9 +36,27 @@ public class Permutation {
 	   }
 	}
    
-   private static void permutation(int [] num, int pos){
+   private static void permutation(int [] a, int i){
+	   int n = a.length;
 	   
+	   if(i == n-1){
+		   for (int z = 0; z < a.length; z++) {
+			System.out.print(a[z] + "");
+		   }
+		   System.out.println("");
+	   }
 	   
+	   for (int j = i; j < a.length; j++) {
+		   swap(a, i, j);
+		   permutation(a, i+1);
+		   swap(a, i, j);
+	   }
+	}
+   
+   private static void swap(int[] a, int i, int j){
+	   int temp = a[i];
+	   a[i] = a[j];
+	   a[j] = temp;
    }
    
 }

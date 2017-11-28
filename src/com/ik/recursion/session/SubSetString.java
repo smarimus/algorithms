@@ -25,6 +25,7 @@ public class SubSetString {
 		char[] ch2 = {'d','e','p'};
 		char[] ch = {'1','2','3'};
 		printSubsetsMain(ch2);
+		
 	}
 	
 	static void subSet(String soFar, String rest, List<String> list){
@@ -49,6 +50,16 @@ public class SubSetString {
 		output[k] = array[i]; 
 		printSubsets(array, i+1, output, k+1);
 	}
+	
+	static void printSubsetsWithGivenSum(char[] array, int i, char[]output, int k, int sum) {
+		if (i == array.length){
+            print(output, k);return;
+         }
+		printSubsets(array, i+1, output, k);
+		output[k] = array[i]; 
+		printSubsets(array, i+1, output, k+1);
+	}
+	
 	static void printSubsets1(char[] array, int i, char[]output, int k) {
 		if (i == array.length){
             print(output, k);return;

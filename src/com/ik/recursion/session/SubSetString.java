@@ -23,8 +23,8 @@ public class SubSetString {
 		
 		char[] ch1 = {'a','b','c'};
 		char[] ch2 = {'d','e','p'};
-		char[] ch = {'1','2','3'};
-		printSubsetsMain(ch2);
+		char[] ch = {'2','4','5'};
+		printSubsetsMain(ch);
 		
 	}
 	

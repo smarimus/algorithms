@@ -20,7 +20,10 @@ public class Permutation {
 	   int[] nums = {1,2,3,4};
 	   backtrack(list, tempList, nums);
 	   permutation(nums, 0);
-	   System.out.println(list);
+	   //System.out.println(list);
+	   System.out.println("");
+	   char[] chars = {'A', 'B', 'C', 'D'};
+	   permutation(chars, 0);
    }
    
    private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
@@ -52,6 +55,29 @@ public class Permutation {
 		   swap(a, i, j);
 	   }
 	}
+   
+   private static void permutation(char [] a, int i){
+	   int n = a.length;
+	   
+	   if(i == n-1){
+		   for (int z = 0; z < a.length; z++) {
+			System.out.print(a[z] + "");
+		   }
+		   System.out.println("");
+	   }
+	   
+	   for (int j = i; j < a.length; j++) {
+		   swap(a, i, j);
+		   permutation(a, i+1);
+		   swap(a, i, j);
+	   }
+	}
+   
+   private static void swap(char[] a, int i, int j){
+	   char temp = a[i];
+	   a[i] = a[j];
+	   a[j] = temp;
+   }
    
    private static void swap(int[] a, int i, int j){
 	   int temp = a[i];

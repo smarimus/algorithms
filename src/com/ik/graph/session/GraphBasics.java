@@ -7,19 +7,25 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
-
-import com.ik.tree.session.DFSearch;
 
 import sun.misc.Queue;
 
 
 class Node<T>{
-	HashSet<Node<T>> childrens;
+	Set<Node<T>> childrens = new HashSet<Node<T>>();
 	T value;
 	
 	Node(T val){
 		this.value = val;
+	}
+	
+	public Set<Node<T>> getAdjacentVertexes(){
+		return this.childrens;
+	}
+	public T getValue(){
+		return this.value;
 	}
 }
 
@@ -69,7 +75,7 @@ public class GraphBasics {
 				visited.put(n.value, true);
 			}
 			
-			HashSet<Node<String>> childs = n.childrens;
+			Set<Node<String>> childs = n.getAdjacentVertexes();
 			if(childs != null){
 				Iterator<Node<String>> it = childs.iterator();
 				while(it.hasNext()){
@@ -97,7 +103,7 @@ public class GraphBasics {
 				visited.put(n.value, true);
 			}
 			
-			HashSet<Node<String>> childs = n.childrens;
+			Set<Node<String>> childs = n.childrens;
 			if(childs != null){
 				Iterator<Node<String>> it = childs.iterator();
 				while(it.hasNext()){
@@ -118,7 +124,7 @@ public class GraphBasics {
 		
 		System.out.print(n.value + ",");
 		
-		HashSet<Node<String>> childs = n.childrens;
+		Set<Node<String>> childs = n.childrens;
 		if(childs != null){
 			Iterator<Node<String>> it =childs.iterator(); 
 			while(it.hasNext()){
@@ -146,7 +152,7 @@ public class GraphBasics {
 			if(s.equals(n.value))
 				backRef.put(s, null);
 			
-			HashSet<Node<String>> childs = n.childrens;
+			Set<Node<String>> childs = n.childrens;
 			if(childs != null){
 				Iterator<Node<String>> it = childs.iterator();
 				while(it.hasNext()){

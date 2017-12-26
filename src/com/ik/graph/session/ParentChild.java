@@ -1,9 +1,9 @@
 package com.ik.graph.session;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -42,6 +42,7 @@ public class ParentChild {
 		Set<Node<Integer>> visited = new HashSet<>();
 		HashMap<Node<Integer>, Set<Node<Integer>>> parentMap = new HashMap<>();
 		
+		// Question1
 		for (Node<Integer> node : vertices) {
 			parentMap.put(node, new HashSet<Node<Integer>>());
 			traverseGraph(node, visited, parentMap);
@@ -60,6 +61,37 @@ public class ParentChild {
 				System.out.print("Parent: (" + node.getValue() );
 			}
 			System.out.println(" ");
+		}
+		
+		// Question 2
+		Set<Integer> pairSet = new HashSet<Integer>();
+		pairSet.add(5); pairSet.add(8);
+		visited.clear();
+		boolean result =false;
+		for (Node<Integer> node : vertices) {
+			if(parentChildPairs(node, visited, pairSet, 0)){
+				result=true;
+			}
+		}
+		if(result){System.out.println(true);}else{System.out.println(false);}
+		
+		//Question 3
+		//Set<Node<Integer>> keys = parentMap.keySet();
+		Set<Node<Integer>> childNodeSet = parentMap.get(f6);
+		while(childNodeSet != null && childNodeSet.size() > 0) {
+			Iterator<Node<Integer>> iter = childNodeSet.iterator();
+		
+			Node<Integer> n=null;
+			while(iter.hasNext()){
+				 n = iter.next();
+				if(parentMap.get(n).size() == 0){
+					System.out.println("fartherest parent: " + n.getValue()); 
+				}else{
+					childNodeSet = parentMap.get(n);
+				}
+			}
+			if(!iter.hasNext())
+				childNodeSet = parentMap.get(n);
 		}
 		
 		return a1;
@@ -92,6 +124,25 @@ public class ParentChild {
 			}
 			traverseGraph(vertex, visited, parentMap);
 		}
+	}
+	
+	static boolean parentChildPairs(Node<Integer> v, Set<Node<Integer>> visited, 
+			Set<Integer> pairSet, int count){
+		boolean found = false;
+		
+		visited.add(v);
+		Set<Node<Integer>> vertices = v.getAdjacentVertexes();
+		for(Node<Integer> vertex: vertices){
+			
+			if(pairSet.contains(vertex.getValue().intValue())){
+				count++;
+			}
+			if(count == 2) return true;
+			if(visited.contains(vertex)) continue;
+			
+			found = parentChildPairs(vertex, visited, pairSet, count);
+		}
+		return found; 
 	}
 	
 	

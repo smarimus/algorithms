@@ -29,6 +29,22 @@ class Node<T>{
 	}
 }
 
+class Pair<T>{
+	
+	T pair1;
+	T pair2;
+	Pair(T pair1, T pair2){
+		this.pair1 = pair1;
+		this.pair2 = pair2;
+	}
+	T getPair1(){
+		return pair1;
+	}
+	T getPair2(){
+		return pair2;
+	}
+}
+
 public class GraphBasics {
 
 	public static void main(String[] args) {

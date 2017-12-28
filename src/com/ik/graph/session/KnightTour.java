@@ -90,7 +90,7 @@ public class KnightTour {
 		
 		for (Node node : path) {
 			System.out.println(node.x + "," + node.y);
-		}
+		}		
 	}
 	
 	public static class Node{

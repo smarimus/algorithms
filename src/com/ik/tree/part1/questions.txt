@@ -1,0 +1,144 @@
+1. Is it a BST?
+
+This is a very well known interview problem:  Given a Binary Tree, check if it is a Binary Search Tree (BST). 
+A valid BST doesn't have to be complete or balanced. Duplicate elements are not allowed in a BST.
+ 
+Solution: O(N) time: https://discuss.leetcode.com/topic/4659/c-in-order-traversal-and-please-do-not-rely-on-buggy-int_max-int_min-solutions-any-more
+
+2.	Merge trees
+
+Merge two BSTs in O(N1 + N2) time, where N1 and N2 are number of nodes in the two trees respectively. 
+The merged tree should contain all the elements of both trees and also be a balanced BST. Finally, print the new tree level by level. 
+ 
+e.g.
+Tree-1:  2->1,3
+Tree-2:  7->6,8
+Output:
+ 
+6
+2 7
+1 3 8
+ 
+The output above is a tree that's printed level by level.
+ 
+(This is a very good question. It's not hard at all, but will need you to write several functions: one to parse, one to sort, one to merge, 
+one to reconstruct and one to print. Each of these can be separate short interview questions)
+ 
+Solution: http://stackoverflow.com/questions/7540546/merging-2-binary-search-trees
+ 
+(This doesn't have the code to print the tree. But that's quite easy. Just do BFS with a Queue and insert a sentinel at the beginning of each level)
+ 
+ 
+ 
+Notes:
+Suggested time in interview: 40 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. 
+For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, 
+what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. 
+Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+3. PostOrder Traversal without recursion
+
+
+Write a function to traverse a Binary tree PostOrder, without using recursion. As you traverse, please print contents of the nodes.
+(Bonus: Spend 1 minute more and also do it with recursion)
+ 
+Solution: https://www.youtube.com/watch?v=hv-mJUs5mvU
+
+
+
+4. Print all paths in a tree
+
+(Facebook question)
+ 
+Given a binary tree, print out all of its root-to-leaf paths one per line.
+ 
+e.g. for a tree that's 
+     1
+  2     3
+4 5  6 7
+ 
+Print:
+1 2 4
+1 2 5
+1 3 6
+1 3 7
+ 
+(This is a simple problem, but really tests your understanding of recursion)
+ 
+Solution: http://www.geeksforgeeks.org/given-a-binary-tree-print-out-all-of-its-root-to-leaf-paths-one-per-line/
+ 
+ 
+ 
+Notes:
+Suggested time in interview: 20 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework 
+i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, 
+what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. 
+Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+5. Convert a BST into a Circular Doubly Linked List
+
+(Google question)
+ 
+Write a recursive function treeToList(Node root) that takes a BST and rearranges the internal pointers to make a circular doubly linked list out of the tree nodes. 
+The "previous" pointers should be stored in the "Left" field and the "next" pointers should be stored in the "Right" field. 
+The list should be arranged so that the nodes are in increasing order. 
+Print the resulting linked list starting root node.(see test-case output to understand the formatting). The operation can be done in O(n) time.
+ 
+Solution: http://cslibrary.stanford.edu/109/TreeListRecursion.html
+ 
+ 
+Notes:
+Suggested time in interview: 40 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework 
+i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, 
+what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. 
+Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+6. Least Common Ancestor (LCA)
+
+(Another popular interview problem)
+ 
+Let T be a rooted tree. The lowest common ancestor between two nodes n1 and n2 is defined as the lowest node in T that has both n1 and n2 as descendants.
+
+The LCA of n1 and n2 in T is the shared ancestor of n1 and n2 that is located farthest from the root. Computation of lowest common ancestors may be useful, 
+for instance, as part of a procedure for determining the distance between pairs of nodes in a tree: 
+the distance from n1 to n2 can be computed as the distance from the root to n1, 
+plus the distance from the root to n2, minus twice the distance from the root to their lowest common ancestor. (Source: Wikipedia)
+ 
+Design an write an algorithm to find the LCA node, given two nodes in a Binary Tree.
+* The tree may or may not be a BST
+* Assume a Node structure that has NO parent pointer
+* Assume that the two nodes are distinct and exist in the tree
+* Find a solution that has runtime complexity of O(N). N is # nodes in the tree.
+ 
+Test cases:
+ 
+Given the following tree:
+ 
+
+ 
+FindLCA(10,20) = 15
+FindLCA(50,80) = 65
+FindLCA(20,60) = 45
+ 
+Desired solution: O(N) time.
+ 
+Solution: http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+ 
+ 
+ 7. Single Value Tree
+ 
+ Given a binary tree, we need to count the number of unival subtrees (all nodes that have the same value). 
+ 
+e.g. Given the following tree, it has 6 unival subtrees.
+ 
+ 
+
+ 
+ 
+Solution: https://crazycoderzz.wordpress.com/count-the-number-of-unival-subtrees-in-a-binary-tree/

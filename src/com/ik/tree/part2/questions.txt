@@ -1,0 +1,112 @@
+1. Clone a binary tree
+
+Given a binary tree (represented by its root node, like usual), clone it. Return the root node of the cloned tree.
+ 
+ 
+ 
+ 
+ 
+ 
+Solution: http://crackprogramming.blogspot.com/2012/11/make-copy-of-binary-tree-given-pointer.html
+ 
+Remember: Cloning or copying a tree is best done recursively. Notice how clean and succinct the code is. 
+Some of you may be tempted to do it breadth-first. But that's more complicated to handle in implementation. 
+
+2. Flip a tree
+
+Reverse a general binary tree, i.e. flip it from right to left.
+
+So for example if we had the binary tree
+
+     6
+   /   \
+  3     4
+ / \   / \
+7   3 8   1
+Reversing it would create
+
+     6
+   /   \
+  4     3
+ / \   / \
+1   8 3   7
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Solution: http://stackoverflow.com/questions/9460255/reverse-a-binary-tree-left-to-right
+ 
+Funny/sad story: https://twitter.com/mxcl/status/608682016205344768
+ 
+ 
+ 3.  Populate Sibling pointers
+
+ Given a binary tree, populate nextRight pointers in each node. 
+ 
+* Constraint: Use only constant extra space.
+ 
+e.g. Given this:
+         a
+       /  \
+      b    c
+     / \    \
+    d   e    f
+ 
+Turn it into this:
+         a -> nil
+       /  \
+      b -> c -> nil
+     / \    \
+    d -> e -> f -> nil
+ 
+Note that 'c' doesn't have both children. It only has right child. So we need to connect 'e' to 'f'.
+ 
+Solution: This is one of the best solutions out there. Has a two-line explanation though. If you need more clarity, please ask the TA. 
+ 
+ 
+ 
+ 4.  Largest BST
+ 
+ Given a binary tree, find the largest Binary Search Tree (BST), where largest means BST with largest number of nodes in it. 
+ The largest BST must include all of its descendants.
+ 
+Solution: http://www.ideserve.co.in/learn/size-of-largest-bst-in-binary-tree
+ 
+ 5.  Rebuild the tree
+ Given the in-order and pre-order traversing results of a binary tree (as arrays), write a function to rebuild the tree. 
+ The function should return the pointer to the root node of the tree. Then take that pointer, and print your tree level by level (level order).
+  Don't assume that these are BSTs. They are just general binary trees.
+ 
+Trivia: Generally speaking, one needs to be given in-order traversal (with either pre or post or level), as input, in order to re-construct a binary tree.
+ Without in-order traversal given, it's not possible to re-construct a binary tree without ambiguity, even if all other 3 traversal orders are given. 
+ The only exception, is if we know something more about the tree 
+ e.g. if the binary tree is full and complete, then we can resolve the ambiguity without having to know the in-order traversal. 
+ [Something to read: http://www.geeksforgeeks.org/if-you-are-given-two-traversal-sequences-can-you-construct-the-binary-tree/]
+ 
+Solutions: 
+http://articles.leetcode.com/2011/04/construct-binary-tree-from-inorder-and-preorder-postorder-traversal.html
+http://edwardliwashu.blogspot.com/2013/01/construct-binary-tree-from-preorder-and.html
+https://www.youtube.com/watch?v=PAYG5WEC1Gs
+ 
+ 
+ 6.  Tree Iterator!
+ 
+ Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+ 
+1. Calling next() will return the next smallest number in the BST.
+2. Calling hasNext() should return whether the next element exists.
+ 
+Both functions should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+ 
+[Iterator is a concept in higher level languages like C++ or Java. You probably can tell what it is. 
+If you want to know more, please feel free to Google for the concept.]
+ 
+Solutions: 
+1. With parent pointer: http://stackoverflow.com/questions/12850889/in-order-iterator-for-binary-tree
+2. Without parent pointer, but with stack: https://leetcode.com/discuss/20001/my-solutions-in-3-languages-with-stack
+ 
+Choice of the solution will depend on what the interviewer asks you to do. #2 is generally preferred i.e. without assuming there is a parent pointer.
+ 

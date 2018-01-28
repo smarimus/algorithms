@@ -116,7 +116,7 @@ public class PalindromePairs {
         for (int i = 0; i < words.length; ++i) {        // A loop of n iterations
             String word = words[i];
             int[] palindromes = findAllPalindromes(word); // We use "Manacher" so O(k)
-
+            
             TrieNode node = rootOfWordsTrie;
             for (int k = word.length() - 1; k >= 0; --k) {   // A loop of k iterations. From the end to the beginning
                 char c = word.charAt(k);
@@ -160,6 +160,12 @@ public class PalindromePairs {
         runTestCase("abcdc", "ba"); // [[0, 1], [0, 2]]
         runTestCase("abcdccdc", "ba", "cdcba"); // [[0, 1], [0, 2]]
         runTestCase("abbaqwe", "ewq", "abaert", "tre", "abcdedcbafg", "gf"); // [1, 0] [5, 4] [3, 2]
+        
+        String word = "bat";
+        char c= word.charAt(1);
+        System.out.println((int)c + " " + (int)'b' );
+        int index = c -'a';
+        System.out.println(index);
     }
 
     private static void runTestCase(String... words) {

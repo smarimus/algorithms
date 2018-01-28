@@ -13,7 +13,7 @@ public class StringRegMatch {
 	static boolean regMatch(char[] string, int i,  char[] pattern, int j){
 		
 		if(i == string.length){
-			System.out.println("i: " + i + " j: " + j);
+			//System.out.println("i: " + i + " j: " + j);
 			return j == pattern.length;
 		}else if(j >= pattern.length)
 			return false;

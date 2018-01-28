@@ -1,10 +1,10 @@
 package com.ik.tree.session;
 
-public class Node {
+public class Node<T> {
 	int value;
-	Node left;
-	Node right;
-	Node(int value, Node right, Node left){
+	Node<T> left;
+	Node<T> right;
+	Node(int value, Node<T> right, Node<T> left){
 		this.value = value;
 		this.left = left;
 		this.right = right;
@@ -15,16 +15,16 @@ public class Node {
 	public void setValue(int value) {
 		this.value = value;
 	}
-	public Node getLeft() {
+	public Node<T> getLeft() {
 		return left;
 	}
-	public void setLeft(Node left) {
+	public void setLeft(Node<T> left) {
 		this.left = left;
 	}
-	public Node getRight() {
+	public Node<T> getRight() {
 		return right;
 	}
-	public void setRight(Node right) {
+	public void setRight(Node<T> right) {
 		this.right = right;
 	}
 }

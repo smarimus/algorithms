@@ -3,7 +3,6 @@ package com.ik.tree.part1;
 public class KthSmallElement {
 	
 	public int kthSmallest(TreeNode root, int k) {
-		
 		return 0;
 	}
 	
@@ -17,9 +16,7 @@ public class KthSmallElement {
 			this.right = null;
 		}
 	}
-	
 }
-
 
 /*
  * 

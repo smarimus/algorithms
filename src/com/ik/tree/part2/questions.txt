@@ -2,11 +2,6 @@
 
 Given a binary tree (represented by its root node, like usual), clone it. Return the root node of the cloned tree.
  
- 
- 
- 
- 
- 
 Solution: http://crackprogramming.blogspot.com/2012/11/make-copy-of-binary-tree-given-pointer.html
  
 Remember: Cloning or copying a tree is best done recursively. Notice how clean and succinct the code is. 
@@ -30,10 +25,6 @@ Reversing it would create
   4     3
  / \   / \
 1   8 3   7
- 
- 
- 
- 
  
  
  

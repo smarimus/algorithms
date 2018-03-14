@@ -1,4 +1,4 @@
-package com.ik.tree.part1;
+package com.ik.tree.session;
 
 public class KthSmallElement {
 	

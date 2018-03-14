@@ -4,6 +4,9 @@ public class Node<T> {
 	int value;
 	Node<T> left;
 	Node<T> right;
+	public Node(int value){
+		this.value = value;
+	}
 	Node(int value, Node<T> right, Node<T> left){
 		this.value = value;
 		this.left = left;

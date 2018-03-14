@@ -1,0 +1,91 @@
+DFS
+	Recursion
+		
+		DFS(Node n){
+			if(n == null)
+				return;
+				
+			System.out.println(n.value);
+			
+			//right
+			DFS(n.left);
+			
+			//left
+			DFS(n.right)
+			
+		}
+	
+	Non Recursion
+	
+		DFS(Node n){
+			Stack<Node> s = new Stack<Node>();
+			s.push(n);
+			
+			while(!s.isEmpty){
+				Node n = s.pop();
+				
+				Node right = n.right;
+				Node left = n.left;
+				
+				if(right != null){
+					s.push(right);
+				}
+				if(left != null){
+					s.push(left);
+				}
+			}
+		}
+		
+time complexity
+	O(n)
+space complexity
+	balanced tree  = log n
+	non balanced tree = O(1)
+	
+BFS
+	Non Recursion
+	
+		BFS(Node n){
+			Queue<Node> s = new Queue<Node>();
+			s.push(n);
+			
+			while(!s.isEmpty){
+				Node n = s.pop();
+				
+				Node right = n.right;
+				Node left = n.left;
+				
+				if(right != null){
+					s.push(right);
+				}
+				if(left != null){
+					s.push(left);
+				}
+			}
+		}
+		
+time complexity
+	O(n)
+space complexity
+	balanced tree  = n/2
+	non balanced tree = O(1)
+	
+	
+Print kth level in DFS
+
+	printKthLevel(Node n, int level, int count){
+		
+		if(node == null || count > level)
+			return; 
+		
+		if(count == level){
+			System.out.println(n.value);
+		}
+		
+		printKthLevel(n.right, level, count++);
+		printKthLevel(n.left, level, count++);
+	}
+	
+	
+Insert into binary tree	
+	

@@ -1,24 +1,5 @@
 package com.ik.tree.part1;
 
-/*
-This is the simple Node class from which the tree and list
-are built. This does not have any methods -- it's just used
-as dumb storage by TreeList.
-The code below tries to be clear where it treats a Node pointer
-as a tree vs. where it is treated as a list.
-*/
-class Node {
-   int data;
-   Node small;
-   Node large;
-   
-   public Node(int data) {
-       this.data = data;
-       small = null;
-       large = null;
-   }
-}
-
 
 /*
 TreeList main methods:
@@ -149,4 +130,24 @@ class TreeList {
        Node head = treeToList(root);
        printList(head);   // 1 2 3 4 5   yay!
    }
+   
+   /*
+   This is the simple Node class from which the tree and list
+   are built. This does not have any methods -- it's just used
+   as dumb storage by TreeList.
+   The code below tries to be clear where it treats a Node pointer
+   as a tree vs. where it is treated as a list.
+   */
+
+   static class Node {
+	   int data;
+	   Node small;
+	   Node large;
+	   
+	   public Node(int data) {
+	       this.data = data;
+	       small = null;
+	       large = null;
+	   }
+	}
 }

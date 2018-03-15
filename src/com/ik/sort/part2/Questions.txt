@@ -1,0 +1,112 @@
+
+Q1	Nearest Neighbor	Coding	submitted	Modify Submission
+Q2	Implement Merge Sort	Coding	submitted	Modify Submission
+Q3	Sort all characters in a string	Coding	submitted	Modify Submission
+Q4	Find an integer not among four billion given ones	Coding	not answered	Solve Question
+
+
+1. Nearest Neighbor
+Given a point P, and other N points in two dimensional space, find K points out of the N points which are nearest to P.
+
+ 
+
+* Distance between two points is measured by standard euclidean method.
+
+ 
+
+(Hint: This problem can either be done with QuickSort partitioning, or can be done with Heaps. Which one would you use? Why? Why not try both in your IDE and see the runtime for large inputs?)
+
+ 
+
+Solution: http://stackoverflow.com/questions/20398799/find-k-nearest-points-to-point-p-in-2-dimensional-plane
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 40 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+2.Implement Merge Sort
+Please convert the standard merge-sort algorithm into code.
+
+ 
+
+Input: Integers in an array, duplicates possible
+
+Output: Same integers in ascending order, in a new array. Preserve the input array.
+
+ 
+
+(Goal of this homework problem: The concept of partitioning, concept of merging partitions, the clarity that merge-sort needs extra space and why worst-case is better than QuickSort viz. O(NLogN))
+
+ 
+
+Solution: http://www.codenlearn.com/2011/10/simple-merge-sort.html
+
+Trivia: In the solution above, what is the Complexity of memory requirement? Can we do better than that?
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+3.Sort all characters in a string
+Sort an array of characters (ASCII only, not UTF8).
+
+ 
+
+Input: A string of characters, like a full English sentence, delimited by a newline or NULL. Duplicates are okay.
+
+Output: A string of characters, in sorted order of their ASCII values. You can overwrite the existing array.
+
+ 
+
+Solution Complexity: Aim for linear time and constant additional space.
+
+ 
+
+(What to understand from this problem: ASCII is great, because it's limited to 256. Remember that for any input that is bound to a range)
+
+ 
+
+Solution: This is a trivial problem :-)
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 20 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+4.Find an integer not among four billion given ones
+(This is a popular interview problem, from Programming Pearls)
+
+ 
+
+Given an input file with four billion integers, provide an algorithm to generate an integer which is not contained in the file. Assume you have 1 GiB memory. Follow up with what you would do if you have only 10 MiB of memory.
+
+ 
+
+It's difficult to test the code for this problem in HackerRank, because of memory constraints. But write your solution as if the constraints are present.
+
+ 
+
+ 
+
+Solution: http://stackoverflow.com/questions/7153659/find-an-integer-not-among-four-billion-given-ones?rq=1
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.

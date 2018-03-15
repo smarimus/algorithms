@@ -1,0 +1,310 @@
+
+	
+Q1	Find minimum in a rotated, sorted array	Coding	not answered	Solve Question
+Q2	Hamming Weight	Coding	not answered	Solve Question
+Q3	Run Length Encoding	Coding	not answered	Solve Question
+Q4	Skyline!	Coding	not answered	Solve Question
+Q5	Find The Next Palindromic Number	Coding	not answered	Solve Question
+Q6	Alternating positive and negative	Coding
+
+
+1 Find minimum in a rotated, sorted array
+(Relatively easy problem, but still popular)
+
+
+We're given an array with sorted numbers. The array has been rotated an unknown number of times. We need to figure out the minimum number in such an array. What would be a fast method that uses only constant space? 
+
+ 
+
+ 
+
+Solution: http://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
+
+2.Hamming Weight
+We're given a large array of 4-byte integers. We need to write a method to find out how many total bits are turned on (i.e. 1s are set) inside such an array. [Such a digital sum of binary representation of a number, is also called its Hamming Weight].
+
+ 
+
+e.g.
+
+1. if input array has two numbers: 31 and 51, the answer is 9, because 31 has 5 bits turned on (out of 32) and 51 has 4. 
+
+2. if the input is 2147483647 and 3, the answer is 31 + 2 = 33
+
+ 
+
+We're looking for a fast solution, even if it uses extra memory. While it is possible to optimize solutions based on the machine architecture, we're not looking for intense bit-hackery. Assume input in base-10. No floating points.
+
+ 
+
+Hint: Think hash tables.
+
+ 
+
+Solution: See the top solution here: http://stackoverflow.com/questions/8871204/count-number-of-1s-in-binary-representation
+
+3. Run Length Encoding
+Simple version of the problem: Compress a string (only has alphabet characters), with basic encoding, where you simply count the number of repeated characters. Then also write a routine to decompress it.
+
+ 
+
+e.g.
+
+Input: "AAAAA" 
+
+Output: "5A"
+
+ 
+
+Input: "BAAAB"
+
+Output: "B3AB"
+
+ 
+
+Input: "ABAB"
+
+Output: "ABAB" [We are not concerned about characters repeating in groups]
+
+ 
+
+Assume that a given character will not repeat more than 127 times.
+
+ 
+
+Solution: Compression solution to this is very simple. It pretty much needs one loop. Decompression is equally simple. Let us know if that is not clear.
+
+ 
+
+Important twists to the problem: 
+
+* String can have any character from the basic ASCII set (ASCII values 0 to 127). i.e. it can now include numbers.
+
+* Compressed length must not exceed original length. It can be same or less.
+
+ 
+
+Solution hint: Given that you cannot have numbers in your solution, can you use something else? Can you make use of higher order ASCII values?
+
+ 
+
+Test cases are given for compression of 2nd (twisted) case. 
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 20 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+4. Skyline!
+This is a very popular problem. Make sure you nail it. Here is the problem definition:
+
+ 
+
+You are given a set of n rectangles in no particular order. They have varying widths and heights, but their bottom edges are collinear, so that they look like buildings on a skyline. For each rectangle, you’re given the x position of the left edge, the x position of the right edge, and the height. Your task is to draw an outline around the set of rectangles so that you can see what the skyline would look like when silhouetted at night.
+
+ 
+
+Each building is represented by triplet (left, ht, right)
+
+‘left': is x coordinated of left side (or wall).
+‘right': is x coordinate of right side
+‘ht': is height of building.
+
+ 
+
+ 
+
+
+
+ 
+
+For example, the building above, is represented as (1, 11, 5).
+
+ 
+
+A skyline is a collection of rectangular strips. A rectangular strip is represented as a pair (left, ht) where left is x coordinate of left side of strip and ht is height of strip.
+
+ 
+
+Examples:
+
+Input: Array of buildings
+       { (1,11,5), (2,6,7), (3,13,9), (12,7,16), (14,3,25),
+         (19,18,22), (23,13,29), (24,4,28) }
+
+Output: Skyline (an array of rectangular strips)
+        A strip has x coordinate of left side and height 
+        (1, 11), (3, 13), (9, 0), (12, 7), (16, 3), (19, 18),  
+        (22, 3), (23, 13), (29, 0)
+
+The below figure demonstrates input and output.  
+
+The left side shows buildings and right side shows skyline.
+
+skyline
+
+
+Consider following as another example when there is only one
+building
+Input:  {(1, 11, 5)}
+Output: (1, 11), (5, 0)
+ 
+
+Solution: 
+
+Good explanation with visuals: https://briangordon.github.io/2014/08/the-skyline-problem.html
+
+Succinct explanation: http://www.geeksforgeeks.org/divide-and-conquer-set-7-the-skyline-problem/
+
+More granular problem definition: https://leetcode.com/problems/the-skyline-problem/
+
+ 
+
+Notes:
+Suggested time in interview: 40 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+ 5.Find The Next Palindromic Number
+ 
+
+Find The Next Palindromic Number
+
+ 
+
+ 
+
+Problem Statement:
+
+ 
+
+Given a number n, you have to find the next smallest palindromic number, larger than it.
+
+ 
+
+Input Format:
+
+ 
+
+There is only one argument denoting integer n.
+
+ 
+
+Output Format:
+
+ 
+
+Return next smallest palindromic number, larger than given number.
+
+ 
+
+Constraints:
+
+ 
+
+0 <= n <= 2147483647
+ 
+
+Sample Test Cases:
+
+ 
+
+Sample Input 1:
+
+ 
+
+5
+
+ 
+
+Sample Output 1:
+
+ 
+
+6
+
+ 
+
+Explanation 1:
+
+ 
+
+6 is a palindromic number, and bigger than 5. There is no palindromic number less than 6 and bigger than 5.
+
+ 
+
+Sample Input 2:
+
+ 
+
+10
+
+ 
+
+Sample Output 2:
+
+ 
+
+11
+
+ 
+
+Notes:
+
+
+Suggested time in interview: 30 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+6. Alternating positive and negative
+Given an array containing both +ve and -ve integers, return an array of alternating positive integers and negative integers such that each set of integers are in the same order as in the input array (stable). 
+e.g. 
+input {2, 3, -4, -9, -1, -7, 1, -5, -6} 
+output {2, -4, 3, -9, 1, -1, -7, -5, -6}. 
+
+
+Can you implement it without using any additional space?
+ 
+
+ 
+
+Solution: 
+
+ 
+
+>>> A=[2, 3, -4, -9, -1, -7, 1, -5, -6]
+
+>>> for i in range(len(A)):
+
+...     j=0
+
+...     while j+2 < len(A):
+
+...             S=[A[j], A[j+1], A[j+2]]
+
+...             S=[1 if x >=0 else -1 for x in S]
+
+...             if S[0]==S[1] and S[1]!=S[2]:
+
+...                     A[j+1],A[j+2]=A[j+2],A[j+1]
+
+...             j+=1
+
+... 
+
+>>> A
+
+[2, -4, 3, -9, 1, -1, -7, -5, -6]
+
+ 
+
+[With no additional space, you can't do better than O(N^2)]
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.

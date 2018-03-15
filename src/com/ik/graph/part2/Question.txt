@@ -1,0 +1,303 @@
+	
+Q1	Snakes and Ladders Matrix	Approximate Solution	not answered	Solve Question
+Q2	Detecting Cycle in a graph	Approximate Solution	not answered	Solve Question
+Q3	Rainfall Challenge	Approximate Solution	not answered	Solve Question
+Q4	Reverse Index	Coding	not answered	Solve Question
+Q5	Longest Path In Weighted DAG	Approximate Solution	not answered	Solve Question
+
+
+1. Snakes and Ladders Matrix
+Given a snake and ladder rectangular MxN board-game, find the minimum number of dice throws required to reach the final cell from the 1st cell. 
+
+ 
+
+Rules are as usual: If after a dice-throw, the player reaches a cell where the ladder starts, the player has to climb up that ladder and if the player reaches a cell that has the mouth of the snake, s/he has to go down to the tail of snake.
+
+ 
+
+For example, in the board given below, it will take minimum 4 throws to reach from 1 to 36. That can be done with the following sequence of throws: (1,6,4,1). There may be more such sequences of the same length viz. (4,2,6,4) etc. 
+
+ 
+
+
+
+ 
+
+Please hard-code input game boards as your test-cases. There are different ways of doing so. e.g. one simple way, is to represent it using a one-dimensional array of length MxN, with each element representing a cell. Values in the array, are the destination cell id for snakes (lower numbers) and ladders (higher numbers).
+
+ 
+
+Solution: http://www.geeksforgeeks.org/snake-ladder-problem-2/ 
+
+ 
+
+Notes:
+Suggested time in interview: 40 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+2. Detecting Cycle in a graph
+Given a directed graph, check whether there is a cycle in it.
+
+ 
+
+* There can be multiple cycles
+
+* We don't need to print all the cycles. Just return a boolean true/false if there is/is-not at least one cycle respectively
+
+ 
+
+ 
+
+Solution: http://www.geeksforgeeks.org/detect-cycle-in-a-graph/
+
+ 
+
+Notes:
+Suggested time in interview: 20 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+3. (This is a popular Palantir problem)
+
+Problem Statement
+
+A group of farmers has some elevation data, and we're going to help them understand how rainfall flows over their farmland.
+
+We'll represent the land as a two-dimensional array of altitudes and use the following model, based on the idea that water flows downhill: 
+
+If a cell’s four neighboring cells all have higher altitudes, we call this cell a sink; water collects in sinks.
+
+Otherwise, water will flow to the neighboring cell with the lowest altitude. If a cell is not a sink, you may assume it has a unique lowest neighbor and that this neighbor will be lower than the cell.
+
+Cells that drain into the same sink – directly or indirectly – are said to be part of the same basin.
+
+Your challenge is to partition the map into basins. In particular, given a map of elevations, your code should partition the map into basins and output the sizes of the basins, in descending order.
+
+Assume the elevation maps are square. Some farmers have small land plots such as the examples below, while some have larger plots. However, in no case will a farmer have a plot of land larger than S = 5000.
+
+Your code should output a space-separated list of the basin sizes, in descending order.
+
+Solution
+
+The problem and the solution both, are from here: http://codereview.stackexchange.com/questions/38500/rainfall-challenge Please be sure to read author's solution and criticism of the answer. It's very instructive.
+
+A few examples are below:
+
+-----------------------------------------
+Input:                 Output: 
+ 3                      7 2
+ 1 5 2 
+ 2 4 7 
+ 3 6 9 
+
+The basins, labeled with A’s and B’s, are: 
+ A A B 
+ A A B 
+ A A A 
+-----------------------------------------
+Input:                  Output: 
+ 1                       1
+ 10 
+
+There is only one basin in this case. 
+The basin, labeled with A’s is: 
+ A
+-----------------------------------------
+Input:                  Output:            
+ 5                       11 7 7
+ 1 0 2 5 8 
+ 2 3 4 7 9 
+ 3 5 7 8 9 
+ 1 2 5 4 3 
+ 3 3 5 2 1 
+
+The basins, labeled with A’s, B’s, and C’s, are: 
+ A A A A A 
+ A A A A A 
+ B B A C C 
+ B B B C C 
+ B B C C C 
+-----------------------------------------
+Input:                  Output: 
+ 4                       7 5 4
+ 0 2 1 3                
+ 2 1 0 4 
+ 3 3 3 3 
+ 5 5 2 1 
+
+The basins, labeled with A’s, B’s, and C’s, are: 
+ A A B B 
+ A B B B 
+ A B B C 
+ A C C C
+-----------------------------------------
+ 
+
+Notes:
+Suggested time in interview:at least 40 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+4. Reverse Index
+Given a text file and a word, find the positions that the word occurs in the file. We’ll be asked to find the positions of many words in the same file. i.e. think precomputing with a reverse index.
+
+ 
+
+Implement the solution using a HashTable and a Trie. Write full implementation of Trie. You can use existing implementation of a HashTable.
+
+ 
+
+[This is almost a mini-project. Best done outside HackerRank. If you want to do inside, you'll need to write to a file first before reading from it: https://www.hackerrank.com/environment/writing-to-file]
+
+ 
+
+ 
+
+ 
+
+Solution: http://www.ardendertat.com/2011/12/20/programming-interview-questions-23-find-word-positions-in-text/
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+5. 
+Longest Path In Weighted DAG
+
+
+Problem Statement:
+
+ 
+
+Given a weighted DAG (directed acyclic graph), where weight of an edge denotes the length of that edge.
+
+ 
+
+Nodes in the graph are numbered from 1 to dag_nodes, where dag_nodes denotes the total number of nodes in the graph.
+
+ 
+
+Also, you are given a node from_node and a node to_node. You have to find longest path from from_node to to_node in the given graph. 
+
+ 
+
+Input Format:
+
+ 
+
+There are six arguments.
+
+ 
+
+First one is an integer dag_nodes, second one is an array dag_from, third one is an array dag_to and forth one is an array dag_weight. These four arguments cumulatively describes the weighted DAG. dag_nodes describes the total number of nodes in the given graph and there is an edge from dag_from[i] node to dag_to[i] node with length dag_weight[i].
+
+ 
+
+Fifth argument is from_node and sixth argument is to_node.  
+
+ 
+
+Output Format:
+
+ 
+
+Return an array describing longest path from from_node to to_node.
+
+ 
+
+There can be multiple longest paths, so you are free to return any of them. 
+
+ 
+
+Constraints:
+
+ 
+
+Given graph is a valid weighted DAG.
+Given graph does not contain multiple edges. 
+to_node is reachable from from_node.
+1 <= dag_nodes <= 450
+1 <= dag_from[i], dag_to[i], from_node, to_node <= dag_nodes
+1 <= dag_weight[i] <= 2 * 10^9
+Total number of edges in graph <= (dag_nodes * (dag_nodes - 1)) / 2
+ 
+
+Sample Test Case:
+
+ 
+
+Sample Input:
+
+ 
+
+dag_nodes = 4
+
+dag_from = [1 1 1 3]
+
+dag_to = [2 3 4 4]
+
+dag_weight =  [2 2 4 3]
+
+from_node = 1
+
+to_node = 4
+
+ 
+
+Sample Output:
+
+ 
+
+[1 3 4]
+
+ 
+
+Explanation:
+
+ 
+
+Total there are two paths from node 1 to node 4.
+
+1) 1 -> 4 with length 4.
+
+2) 1 -> 3 -> 4 with length 2 + 3 = 5.
+
+So, Longest path from node 1 to node 4 is [1 3 4] with length 5.
+
+ 
+
+Notes:
+
+ 
+
+Suggested time in interview: 30 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+ 
+
+When from_node = to_node, path contains only one node, so output should be [from_node] containing only one node. 
+
+ 
+
+It can be helpful to first store edges node wise and then use it.
+
+Something like this:
+
+ 
+
+vector<vector<pair<int, int>>> node_wise_edges(dag_nodes + 1, vector<pair<int, int>>(0));
+
+for (int i = 0; i < dag_edges; i++)
+
+{
+
+    node_wise_edges[dag_from[i]].push_back({dag_to[i], dag_weight[i]});
+
+}
+
+ 
+
+Now we have all the outgoing edges from node i in vector node_wise_edges[i]. And it will be easier to use. 

@@ -1,0 +1,282 @@
+	
+Q1	Nuts and Bolts!	Coding	not answered	Solve Question
+Q2	Merge K sorted arrays, size N each	Coding	not answered	Solve Question
+Q3	Group the numbers	Coding	not answered	Solve Question
+Q4	Top K	Coding	not answered	Solve Question
+Q5	3Sum problem	Coding	not answered	Solve Question
+	
+
+1.Nuts and Bolts!
+A disorganized carpenter has a mixed pile of bolts and nuts and would like to find the corresponding pairs of bolts and nuts. Each nut matches exactly one bolt (and vice versa). By trying to match a bolt and a nut the carpenter can see which one is bigger, but she cannot compare two bolts or two nuts directly. Can you help the carpenter match the nuts and bolts quickly?
+
+ 
+
+In other words: You are given a collection of nuts of different size and corresponding bolts. You can choose any nut & any bolt together, from which you can determine whether the nut is larger than bolt, smaller than bolt or matches the bolt exactly. However there is no way to compare two nuts together or two bolts together. (i.e. we cannot sort all nuts or sort all bolts). Write an algorithm to match each bolt to its matching nut.
+
+ 
+
+You can make the following assumptions:
+
+1. There are equal number of nuts and bolts
+
+2. A given nut uniquely matches a bolt. i.e. There are no extra unmatched nuts or extra bolts. i.e. every nut has one and only one matching bolt and vice-versa.
+
+ 
+
+e.g. 
+
+Input: 
+
+N3,N2,N1,N4
+
+B4,B2,B3,B1
+
+ 
+
+Output (in any order):
+
+N1B1
+
+N2B2
+
+N3B3
+
+N4B4
+
+ 
+
+Test cases: Please hard-code test-cases in your main() method.  That will be more convenient to you in this problem. Ignore the existing dummy test-case.
+
+ 
+
+(Goal: Understand the application of QuickSort. Apply the concept of a Pivot and partitioning)
+
+ 
+
+Solution complexity: Is the time/space complexity same as quicksort, or worse, or better?
+
+ 
+
+Solution: http://www.geeksforgeeks.org/nuts-bolts-problem-lock-key-problem/
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+
+2. Merge K sorted arrays, size N each
+
+ 
+
+ 
+
+Problem Statement:
+
+ 
+
+This is a popular facebook problem. Given K sorted arrays of size N each, merge them and print the sorted output. Assume N is very large compared to K. N may not even be known. The arrays could be just sorted streams, for instance, timestamp streams.
+
+All arrays might be sorted in increasing manner or decreasing manner. Sort all of them in the manner they appear.
+
+ 
+
+Don't use inbuilt sorts or any standard sorting algorithm after simply merging the lists.
+
+ 
+
+Note:
+
+ 
+
+Repeats are allowed.
+Negative numbers and zeros are allowed.
+Assume all arrays are sorted in the same order. Preserve that sort order in output.
+It is possible to find out the sort order from at least one of the arrays.
+ 
+
+Input Format:
+
+ 
+
+2-D Integer array
+Repeats possible
+Individual integer array is sorted
+ 
+
+Output Format:
+
+ 
+
+Return an integer array containing all elements from all individual arrays combined.
+
+ 
+
+Constraints:
+
+ 
+
+2 <= N <= 500
+1 <= K <= 500
+-10^6 <= element <= 10^6
+
+ 
+
+Sample Test Case:
+
+ 
+
+Sample Input-1:
+
+ 
+
+K = 3, N =  4
+arr[][] = { {1, 3, 5, 7},
+            {2, 4, 6, 8},
+            {0, 9, 10, 11}} ;
+
+ 
+
+Sample Output-1:
+
+ 
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+ 
+
+Notes:
+
+
+Suggested time for an interview: 30 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+3. Group the numbers
+(If this question feels easy, that's because it is)
+
+ 
+
+Given an array of numbers, positive integers only, group them in-place into evens and odds.
+
+ 
+
+Input: Integer array, positive integers only, repeats possible.
+
+Output: The same integer array, with evens on left side and odds on the right side. There is no need to preserve order within odds or within evens.
+
+ 
+
+(Understand that Grouping is just a special case of sorting. It's cognitively much less complex, and can be done with easier methods, which we may not label as sorting, but are just a special case of sorting)
+
+ 
+
+ 
+
+Solution Complexity: Aim for O(N), in-place. Ideally you'd do it in one pass of the array.
+
+ 
+
+Test-cases: As long as you can ascertain that your solution is right, don't worry if the test-cases don't pass exactly as they are given here. They expect evens to the left and odds to the right. Plus you may have different order. 
+
+ 
+
+Solution: This is a trivial problem :-)
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 20 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+4.Top K
+[Popular Facebook problem and a Computer Science classic, which you may have touched in the class also]
+
+ 
+
+Problem statement: Find K largest elements from a given stream of numbers.  By definition, we don't know the size of the input stream. Hence produce K largest elements seen so far, at any given time.
+
+ 
+
+* Input may or may not be sorted and could have duplicates 
+
+* Represent input stream as an array. Don't rely on its size.
+
+* Feel free to use built-in functions if you need a specific data-structure.
+
+* If your output is correct, but a test-case is failing because order of output elements is different, then don't worry about it. Move on.
+
+ 
+
+ 
+
+Solution(s): http://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/ (Solution #6 is the only one that'll work when size of the input stream is not known)
+
+ 
+
+[Trivia: When size of input array (stream) is known to be N, then either #5 or #6 will work. Both solutions have same complexity, but #6 will work faster because it doesn't muck with the entire input, and only deals with K elements separately]
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 40 minutes.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+5.3Sum problem
+(Here is an example of a problem, where sorting is inevitable, but it doesn't matter which sorting technique you use)
+
+ 
+
+Given an array of N integers, find all triplets  that sum to 0 (zero).
+
+ 
+
+* Triplets may or may not be consecutive numbers.
+
+* The array can include duplicate elements.
+
+* Array is not necessarily sorted.
+
+ 
+
+* Print output as shown. i.e. as strings, one per line, comma separated elements.
+
+* Order of elements inside the answer triplets does not matter. i.e. if your output elements are the same, but only in different order, then it's an acceptable solution.
+
+* Do not print duplicate triplets.
+
+* If no such triplets are found, then print nothing.
+
+ 
+
+ 
+
+Solution complexity: Cant' do better than N^2. This is one of those nasty problems, where even N^2 is not intuitive. 
+
+Solution: http://www.programcreek.com/2012/12/leetcode-3sum/
+
+ 
+
+Some ways this problem is disguised
+
+1. http://www.geeksforgeeks.org/find-number-of-triangles-possible/. 
+
+2. Sum exactly to a given integer K
+
+3. Sum to the nearest number to given integer K (sort and do a binary search to nearest)
+
+ 
+
+ 
+
+Notes:
+Suggested time in interview: 30 minutes
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+
+

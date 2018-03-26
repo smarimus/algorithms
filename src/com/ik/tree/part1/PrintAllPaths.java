@@ -24,6 +24,8 @@ public class PrintAllPaths {
 		bst.add(root, 30);
 		bst.add(root, 55);
 		bst.add(root, 42);
+		bst.add(root, 60);
+		bst.add(root, 65);
 		
 		printAllPath(root);
 	}
@@ -31,26 +33,32 @@ public class PrintAllPaths {
 	public static void  printAllPath(Node<Integer> root){
 		int[] arr = new int[10];
 		List<Node<Integer>> list = new ArrayList<Node<Integer>>();
-		//printPath(root, list, 0);
+		printPath(root, list, 0);
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		printPath1(root, arr, 0);
 	}
 	
 	public static void printPath(Node<Integer> node, List<Node<Integer>> list, int index){
 		
 		if(node == null){
-			print(list);
+			print(list, index);
 			System.out.println();
 			return;
 		}
 		list.add(index, node);
 		++index;
+		
 		printPath(node.getLeft(), list, index);
-		printPath(node.getRight(), list, index);
+		if(node.getRight()!= null){
+			printPath(node.getRight(), list, index);
+		}
 	}
 	
-	public static void print(List<Node<Integer>> list){
-		for(Node<Integer> node: list){
-			System.out.print(node.getValue() + ", ");
+	public static void print(List<Node<Integer>> list, int index){
+		for (int i = 0; i < index; i++) {
+			System.out.print(list.get(i).getValue() + ", ");
 		}
 	}
 	
@@ -67,7 +75,6 @@ public class PrintAllPaths {
 		if(node.getRight()!= null){
 			printPath1(node.getRight(), arr, index);
 		}
-		
 	}
 	
 	public static void print1(int arr[], int end){

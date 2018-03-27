@@ -57,6 +57,7 @@ Note that 'c' doesn't have both children. It only has right child. So we need to
  
 Solution: This is one of the best solutions out there. Has a two-line explanation though. If you need more clarity, please ask the TA. 
  
+ https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/discuss/37828/o1-space-on-complexity-iterative-solution
  
  
  4.  Largest BST

@@ -11,67 +11,81 @@ public class TreeIterator {
 		// TODO Auto-generated method stub
 		
 		BST bst = new BST();
-		Node<Integer> root = new Node<Integer>(25);
+		Node<Integer> root = new Node<Integer>(1);
 		
-		bst.add(root, 18);
-		bst.add(root, 20);
-		bst.add(root, 19);
-		bst.add(root, 24);
+		bst.add(root, 0);
+		bst.add(root, 1);
+		bst.add(root, 2);
+		bst.add(root, 3);
+		bst.add(root, 8);
+		bst.add(root, 5);
+		bst.add(root, 4);
+		bst.add(root, 6);
+		bst.add(root, 7);
+		bst.add(root, 12);
 		bst.add(root, 10);
-		bst.add(root, 40);
-		bst.add(root, 36);
-		bst.add(root, 38);
-		bst.add(root, 37);
-		bst.add(root, 30);
-		bst.add(root, 55);
-		bst.add(root, 42);
+		bst.add(root, 14);
 		
 		TreeIterator ti = new TreeIterator(root);
-		
 		while(ti.hasNext()){
-			System.out.println(ti.next().getValue());
+			System.out.print(ti.next().getValue() + ", ");
 		}
-
+		//BSTIterator ti = new BSTIterator(root);
 	}
 	
 	private Stack<Node<Integer>> s = new Stack<Node<Integer>>();
 	
 	TreeIterator(Node<Integer> root){
 		if(root == null) return;
-		
 		s.push(root);
-		Node<Integer> left = root.getLeft();
-		while(left != null){
-			s.push(left);
-			left = left.getLeft();
-		}
+		pushToStack(root.getLeft());
 	}
 	
 	public Node<Integer> next(){
-		Node<Integer> result = null;
+		Node<Integer> node = null;
 		if(!s.isEmpty()){
-			
-			Node<Integer> node = s.pop();
-			Node<Integer> innerNode = node.getRight();
-			
-			while(innerNode != null){
-				s.push(innerNode);
-				
-				if(innerNode.getLeft() != null){
-					//s.push(innerNode.getLeft());
-					innerNode = innerNode.getLeft();
-				}else{
-					innerNode = innerNode.getRight();
-				}
-			}
-			result = node;
+			node = s.pop();
+			pushToStack(node.getRight());
 		}
-		
-		return result;
+		return node;
+	}
+	
+	private void pushToStack(Node<Integer> node){
+		while(node != null){
+			s.add(node);
+			node = node.getLeft();
+		}
 	}
 	
 	public boolean hasNext(){
 		return !s.isEmpty();
 	}
+	
+	/*
+	  public int next() {
+	   
+	   TreeNode result = null;
+		if(!s.isEmpty()){
+			
+			TreeNode treeNode = s.pop();
+			TreeNode innerNode = treeNode.right;
+			
+			while(innerNode != null){
+				s.push(innerNode);
+                
+                if(innerNode.left == null)
+					return treeNode.val;
+				
+				if(innerNode.left != null){
+					innerNode = innerNode.left;
+				}else{
+					innerNode = innerNode.right;
+				}
+			}
+			result = treeNode;
+		}
+		return result.val;
+   } 
+	 */
 }
 

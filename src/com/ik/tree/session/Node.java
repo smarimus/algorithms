@@ -2,8 +2,9 @@ package com.ik.tree.session;
 
 public class Node<T> {
 	int value;
-	Node<T> left;
-	Node<T> right;
+	public Node<T> left;
+	public  Node<T> right;
+	public  Node<T> next;
 	public Node(int value){
 		this.value = value;
 	}

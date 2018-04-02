@@ -1,0 +1,33 @@
+
+
+		         a
+		      /     \
+		    b    		c
+		   /  \  	   /  \
+		  d     e	 f     g
+         /  \  /  \ /  \  /  \
+      	h    i j  k l   m n   o
+     
+    
+
+		A				
+		    		
+Cur		a (null) (b)	
+Head	b -> c	 null	
+Prev	b (c)	 null
+
+Cur		b (c) 	(d)
+Head	d	
+Prev	d -> e (e) (e -> f) (f -> g) (g)
+
+Cur		d
+Head	
+Prev	
+
+
+
+         a -> null
+       /  \
+      b  -> c
+     / \   /  \
+    d -> e -> f   g

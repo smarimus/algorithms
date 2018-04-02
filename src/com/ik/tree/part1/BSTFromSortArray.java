@@ -1,10 +1,33 @@
 package com.ik.tree.part1;
 
+import com.ik.tree.session.*;
+import com.ik.tree.session.Node;
+
 public class BSTFromSortArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		int[] sortedArray = {5, 10, 15, 20, 25, 30, 35, 40, 45};
+		
+		Node<Integer> tree = createBSTFromSortArray(sortedArray, 0, sortedArray.length-1);
+		
+		BSTUtil.inOrderTraverse(tree);
+	}
+	
+	public static Node<Integer> createBSTFromSortArray(int[] sortedArray, int start, int end){
+		
+		if(start > end){
+			return null;
+		}
+		
+		int mid = (start+end)/2;
+		
+		Node<Integer> n = new Node<Integer>(sortedArray[mid]);
+		n.setLeft( createBSTFromSortArray(sortedArray, start, mid-1));
+		n.setRight( createBSTFromSortArray(sortedArray, mid+1, end));
+		
+		return n;
 	}
 
 }

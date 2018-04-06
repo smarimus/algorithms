@@ -9,9 +9,11 @@ public class TwoDSearch {
 				{1,10,20,30},
 				{15,21,31,41},
 				{17,25,35,43},
-				{28,29,39,49}};
+				{28,29,39,49}
+				};
 		
-		System.out.println(search(a, 100));
+		System.out.println(search(a, 28));
+		System.out.println();
 	}
 	
 	
@@ -24,6 +26,7 @@ public class TwoDSearch {
 		while((i>=0 && j>=0) && (i<=a.length-1 && j<=a.length-1)){
 			
 			int val = a[i][j];
+			System.out.print(val + " , ");
 			if(val == k) return val;
 			if(val > k){
 				j--;continue;

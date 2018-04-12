@@ -5,8 +5,10 @@ public class AlternatePositiveNegative {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] a = {2, 3, -4, -9, -1, -7, 1, -5, -6, 4, 8, -9, -10};
-		alternatePositiveNegative(a);
+		int[] a2 = {2, 3, -4, -9, -1, -7, 1, -5, -6, 4, 8, -9, -10};
+		int[] a = { 1, 2, -3, -4, -5, 6, -7, -8, 9, 10, -11, -12, -13, 14 };
+		int[] a1 = {2, 3, -4, -9};
+		alternatePositiveNegative1(a);
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + ", ");
 		}
@@ -52,24 +54,48 @@ public class AlternatePositiveNegative {
 	
 	public static void alternatePositiveNegative1(int[] a){
 		
-		
-		for (int i = 0; i < a.length; i++) {
-			int current = a[i];
-			
-			for (int j = i+1; j < a.length; j++) {
-				int next =  a[j];
-				
-				// if cur positive, look for negative in the next place, then skip
-				if(current> 0 && next > 0){
-					
-				}	
-			
-				// negative
-				if(current < 0 && next > 0){
-					
+		int cur = 0;
+		while(cur < a.length-1){
+			if(a[cur] < 0){
+				if(a[cur+1] > 0){
+					cur++; continue;
+				}else{
+					int ind = findSuccessor(a, true, cur+1);
+					swap(a, cur+1, ind);
+					cur++;
 				}
-				
 			}
+			
+			if(a[cur] > 0){
+				if(a[cur+1] < 0){
+					cur++; continue;
+				}else{
+					int ind = findSuccessor(a, false, cur+1);
+					swap(a, cur+1, ind);
+					cur++;
+				}
+			}	
 		}
 	}
+	
+	public static int findSuccessor(int[] a, boolean isPositive, int startInd){
+		
+		for (int i = startInd; i < a.length; i++) {
+			if(isPositive){
+				if(a[i] > 0)
+					return i;
+			}else{
+				if(a[i] < 0)
+					return i;
+			}
+		}
+		return startInd;
+	}
+	
+	public static void swap(int[] a, int x, int y){
+		int temp = a[x];
+		a[x] = a[y];
+		a[y] = temp;
+	}
+
 }

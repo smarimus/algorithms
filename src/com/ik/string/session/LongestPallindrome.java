@@ -49,6 +49,48 @@ public class LongestPallindrome {
         return max;
     }
     
+    
+    public static Pair longestPalindrome(String s){
+    	// bbac - even
+    	// bbaca - odd
+    	
+    	char[] c = s.toCharArray();
+    	int len = s.length();
+    	Pair pair = new Pair(0,0);;
+    	
+    	for (int i = 0; i < c.length; i++) {
+    		
+    		int backward = i-1;
+    		int forward = i+1;
+    		
+    		//even
+    		while(backward > 0 && forward < len && c[backward] == c[forward]){
+    			backward--;
+    			forward++;
+    		}
+    		backward++;
+			forward--;
+    		
+    		if(pair == null || forward - backward +1 > pair.e - pair.e +1){
+    			pair = new Pair(backward, forward);
+    		}
+    		
+    		backward = i;
+    		forward=i+1;
+    		//odd
+    		while(backward > 0 && forward < len && c[backward] == c[forward]){
+    			backward--;
+    			forward++;
+    		}
+    		
+    		if(pair == null || forward - backward +1 > pair.e - pair.e +1){
+    			pair = new Pair(backward, forward);
+    		}
+		}
+    	
+    	return pair;
+    }
+    
     public static class Pair {
         public Pair(int b, int e) {
             this.b = b;

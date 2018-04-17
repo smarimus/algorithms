@@ -9,7 +9,8 @@ class Minimum
         if (high < low)  return arr[0];
  
         // If there is only one element left
-        if (high == low) return arr[low];
+        if (high == low) 
+        	return arr[low];
  
         // Find mid
         int mid = low + (high - low)/2; /*(low + high)/2;*/
@@ -31,8 +32,40 @@ class Minimum
     public static void main(String[] args)
     {
     	int arr1[] =  {5, 6, 1, 2, 3, 4};
-    	int arr2[] =  {3, 4, 5, 6, 1};
-        int n1 = arr1.length;
+    	int arr2[] =  {1, 2, 3, 4, 5, 6};
+    	int arr3[] =  {3, 4, 5, 6, 1, 2};
+    	int arr4[] =  {2, 3, 4, 5, 6, 1};
+    	int arr5[] =  {6, 1, 2, 3, 4, 5};
+    	int arr6[] =  {1};
+    	int arr7[] =  {1, 2};
+    	int arr8[] =  {2, 1};
+    	
+        
+        System.out.println(findMin2(arr1, 0, arr1.length -1));
+        System.out.println(findMin2(arr2, 0, arr2.length -1));
+        System.out.println(findMin2(arr3, 0, arr3.length -1));
+        System.out.println(findMin2(arr4, 0, arr4.length-1));
+        System.out.println(findMin2(arr5, 0, arr5.length-1));
+        
+        System.out.println(findMin2(arr6, 0, arr6.length-1));
+        System.out.println(findMin2(arr7, 0, arr7.length-1));
+        System.out.println(findMin2(arr8, 0, arr8.length-1));
+        
+        System.out.println();
+        
+        System.out.println(findMin(arr1, 0, arr1.length -1));
+        System.out.println(findMin(arr2, 0, arr2.length -1));
+        System.out.println(findMin(arr3, 0, arr3.length -1));
+        System.out.println(findMin(arr4, 0, arr4.length-1));
+        System.out.println(findMin(arr5, 0, arr5.length-1));
+        
+        System.out.println(findMin(arr6, 0, arr6.length-1));
+        System.out.println(findMin(arr7, 0, arr7.length-1));
+        System.out.println(findMin(arr8, 0, arr8.length-1));
+    }
+    
+    /*
+     int n1 = arr1.length;
         System.out.println("The minimum element is "+ findMin1(arr1, 0, n1-1));
         System.out.println("The minimum element is "+ findMin1(arr2, 0, arr2.length-1));
         
@@ -44,8 +77,8 @@ class Minimum
         
         int arr9[] =  {2, 1};
         int n9 = arr9.length;
-        System.out.println("The minimum element is "+ findMin(arr9, 0, n9-1));
-    }
+        System.out.println("The minimum element is "+ findMin(arr9, 0, n9-1)); 
+     */
     
     // Driver Program
     public static void main1(String[] args)
@@ -96,21 +129,55 @@ class Minimum
     static int findMin1(int a[], int low, int high){
     	
     	int mid = (low+high)/2;
-    	
     	//if(a[low] < a[high])
-    	
     	if (low < mid && mid < high && a[mid-1] > a[mid] ){
     		return a[mid];
     	}
-    	
     	if((mid == low && low < high) && a[mid+1] < a[mid]){
     		return a[mid+1];
     	}
-    	
     	if(a[low] > a[mid] && a[mid] < a[high]){
     		return findMin1(a, low, mid);
     	}
     	return findMin1(a, mid, high);
     }
     
+    static int findMin2(int a[], int start, int end){
+    	
+    	if(a.length == 2){
+    		if (a[start] < a[end]){
+    			return a[start];
+    		}else{
+    			return a[end];
+    		}	
+    	}
+    	if(a.length == 1){
+    		return a[start];
+    	}
+    	
+    	int mid = (start + end)/2;
+    	
+    	if(mid+1 > a.length-1){
+    		if(a[mid] < a[mid-1])
+    			return a[mid];
+    	}
+    	if(mid-1 < 0){
+    		if(a[mid] > a[mid+1])
+    			return a[mid+1];
+    	}
+    	//System.out.println( (!(mid+1 > a.length-1)) + " " + mid + " " + a.length );
+    	if( (!(mid+1 > a.length-1))  && (a[mid-1] > a[mid] && a[mid] < a[mid+1])){
+    		return a[mid];
+    	}
+    	
+    	if(a[start] < a[mid] && a[mid] < a[end]){
+    		return a[start];
+    	}else if(a[start] < a[mid] && a[mid] > a[end]){
+    		return findMin2(a, mid+1, end);
+    	}else if(a[start] > a[mid] && a[mid] < a[end]){
+    		return findMin2(a, start, mid-1);
+    	}
+    	
+    	return -1;
+    }
 }

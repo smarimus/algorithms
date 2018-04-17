@@ -85,6 +85,81 @@ public class SlidingWindow {
 		return result;
 	}
 	
+	
+	public static int shortestSubArray(String s, char[] charSet){
+		
+		// helloworld
+		char[] c = s.toCharArray();
+		
+		Set<Character> set = new HashSet<Character>();
+		for (int i = 0; i < charSet.length; i++) {
+			set.add(charSet[i]);
+		}
+		
+		int i = 0;
+		for (; i < c.length; i++) {
+			if(!set.contains(c[i])){
+				continue;
+			}
+			break;
+		}
+		
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		int missing = set.size()-1;
+		
+		Pair pair = null;
+		for (int left = i; left < c.length; left++) {
+			
+			if(!set.contains(c[left])){
+				continue;
+			}
+			
+			int count = map.getOrDefault(c[left], 0);
+			map.put(c[left], count++);
+			
+			if(count == 0){
+				missing--;
+			}
+			
+			if(missing > 0){
+				continue;
+			}
+			
+			for (int right = left; right < c.length; right++) {
+				if(!set.contains(c[left])){
+					continue;
+				}
+				
+				if(pair == null || (right - left< pair.right - pair.left)){
+					pair = new Pair(left, right);
+				}
+				
+				count = map.get(c[left]);
+				
+				if(count != 0){
+					map.put(c[left], --count);
+					continue;
+				}
+				missing++;
+				break;
+			}
+		}
+		int result =0;
+		if(pair != null) result = pair.right - pair.left;
+		
+		return result ;
+	}
+	
+	static class Pair{
+		public int left;
+		public int right;
+		
+		Pair(int left, int right){
+			this.left= left;
+			this.right = right;
+		}
+	}
+	
 	public static Result shortestContainingSubArray(char[] array, Set<Character> set) {
         int left;
         for (left = 0; left < array.length; ++left) {

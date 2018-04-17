@@ -23,6 +23,18 @@ public class EncodeDecodeString {
 		System.out.println(deCompress(s2));
 		System.out.println(deCompress(s3));
 		System.out.println(deCompress(s8));
+		
+		System.out.println();
+		
+		System.out.println(compress1(s));
+		System.out.println(compress1(s2));
+		System.out.println(compress1(s3));
+		System.out.println(compress1(s4));
+		
+		System.out.println(deCompress1(s));
+		System.out.println(deCompress1(s2));
+		System.out.println(deCompress1(s3));
+		System.out.println(deCompress1(s8));
 	}
 	
 	static String compress(String s){
@@ -40,6 +52,28 @@ public class EncodeDecodeString {
 				sb.append(count).append(c); count=0;
 			}else{
 				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+	
+	static String compress1(String s){
+		char[] chars = s.toCharArray();
+		
+		StringBuffer sb = new StringBuffer();
+		int count = 0;
+		for (int i = 0; i < chars.length; i++) {
+			char cur = chars[i];
+			
+			if(i+1 < chars.length && cur == chars[i+1]){
+				count++;
+				continue;
+			}else{
+				if(count > 0){
+					sb.append(count+1);
+					count=0;
+				}
+				sb.append(cur);
 			}
 		}
 		return sb.toString();
@@ -73,6 +107,25 @@ public class EncodeDecodeString {
 			}
 			
 			sb.append(val);
+		}
+		return sb.toString();
+	}
+	
+	static String deCompress1(String s){
+		char[] chars = s.toCharArray();
+		StringBuffer sb = new StringBuffer();
+		
+		for (int i = 0; i < chars.length; i++) {
+			
+			char c = chars[i];
+			if(Character.isDigit(c)){
+				int val = Character.digit(c, 10);
+				for (int j = 0; j < val; j++) {
+					sb.append(chars[i+1]);
+				}
+			}else{
+				sb.append(c);
+			}
 		}
 		return sb.toString();
 	}

@@ -18,11 +18,11 @@ public class Permutation {
 	   List<List<Integer>> list = new ArrayList<List<Integer>>();
 	   List<Integer> tempList = new ArrayList<Integer>();
 	   int[] nums = {1,2,3,4};
-	   backtrack(list, tempList, nums);
-	   permutation(nums, 0);
+	   //backtrack(list, tempList, nums);
+	   //permutation(nums, 0);
 	   //System.out.println(list);
 	   System.out.println("");
-	   char[] chars = {'A', 'B', 'C', 'D'};
+	   char[] chars = {'b', 'c', 'd', 'e'};
 	   permutation(chars, 0);
    }
    
@@ -51,6 +51,7 @@ public class Permutation {
 	   
 	   for (int j = i; j < a.length; j++) {
 		   swap(a, i, j);
+		  
 		   permutation(a, i+1);
 		   swap(a, i, j);
 	   }
@@ -64,10 +65,14 @@ public class Permutation {
 			System.out.print(a[z] + "");
 		   }
 		   System.out.println("");
+		   return;
 	   }
+	   
+	  //System.out.println(i+1);
 	   
 	   for (int j = i; j < a.length; j++) {
 		   swap(a, i, j);
+		   System.out.print(" i: " + i + " " + "j: " + j + " ");
 		   permutation(a, i+1);
 		   swap(a, i, j);
 	   }

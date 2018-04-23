@@ -3,8 +3,10 @@ package com.ik.string.session;
 public class StringRegMatch {
 
 	public static void main(String[] args) {
-		System.out.println(RegMatch("abccdaa", "ab*d*"));
-		System.out.println(RegMatch("abdds", "ab.d."));
+		System.out.println(RegMatch("abcdd", "ab*d"));
+		System.out.println(RegMatch("abd", "ab*d"));
+		//System.out.println(RegMatch("abdds", "ab.d."));
+		//System.out.println(RegMatch("abccdaa", "ab*ccdaa"));
 	}
 	static boolean RegMatch(String string, String pattern){
 		return regMatch(string.toCharArray(), 0, pattern.toCharArray(), 0);
@@ -21,7 +23,7 @@ public class StringRegMatch {
 		if(j < pattern.length && (string[i] == pattern[j] || pattern[j] == '.')){
 			return regMatch(string, i+1, pattern, j+1);
 		}else if(pattern[j] == '*'){
-			System.out.println("* Block - i: " + i + " j: " + j);
+			System.out.println("* Block - i: " + i + " " + string[i] + " j: " + j + "  " + pattern[j] );
 			return regMatch(string, i, pattern, j+1) || regMatch(string, i+1, pattern, j);
 		}
 		

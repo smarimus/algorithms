@@ -13,185 +13,98 @@ Generate All Possible Expressions That Evaluate To The Given Target Value
 
  
 
-Problem Statement:
-
- 
+Problem Statement: 
 
 You are given a string s, containing only numerical characters ('0' - '9'). You are also given a non-negative number target.
-
- 
-
 You have to put between each pair of numerical characters, one of ("", "*", "+") operators such that the expression you get will evaluate to the target value.
 
- 
-
-Putting "" (an empty string) operator between two numerical characters means, that the they are joined (e.g. 1""2 = 12). Also the join can be extended further (e.g. 1""2""3 = 123).
-
- 
+Putting "" (an empty string) operator between two numerical characters means, that the they are joined (e.g. 1""2 = 12). 
+Also the join can be extended further (e.g. 1""2""3 = 123).
 
 Precedence of the operators matters. In higher to lower precedence:
-
-Join ("") > Multiplication ("*") > Addition ("+")
-
- 
+Join ("") > Multiplication ("*") > Addition ("+") 
 
 Input Format:
-
  
 
 There are two arguments.
-
 1) String s.
-
 2) Long integer target. 
 
- 
+Output Format: 
 
-Output Format:
+Return array of strings containing ALL possible strings that evaluate to the target value.
+You need not to worry about the order of strings in your output array. 
+Like for s = "22" and target = 4, arrays ["2+2", "2*2"] and ["2*2", "2+2"] both will be accepted. 
 
- 
-
-Return array of strings containing ALL possible strings that evaluate to the target value. 
-
- 
-
-You need not to worry about the order of strings in your output array. Like for s = "22" and target = 4, arrays ["2+2", "2*2"] and ["2*2", "2+2"] both will be accepted.   
+Any string in the returned array should not contain any spaces. 
+In the above example string "2+2" is expected, other strings containing any space like " 2+2", "2 + 2", "2 +2" etc. will give wrong answer. 
 
  
 
-Any string in the returned array should not contain any spaces. In the above example string "2+2" is expected, other strings containing any space like " 2+2", "2 + 2", "2 +2" etc. will give wrong answer. 
-
- 
-
-Constraints:
-
- 
+Constraints: 
 
 1 <= |s| <= 13
 s only contains numerical characters ('0' - '9').
 0 <= target < 10^13
 You have to return ALL possible strings that evaluate to target value.
- 
 
 Sample Test Cases:
 
- 
-
 Sample Input:
 
- 
-
 s = "222"
-
-target = 24
-
- 
+target = 24 
 
 Sample Output:
-
- 
-
 ["22+2", "2+22"]
 
- 
-
-Explanation:
-
- 
+Explanation: 
 
 1) 22 + 2 = 24 (Here, we put "" operator between the first two characters and then put "+" operator between the last two characters.)
-
 2) 2 + 22 = 24 (Here, we put "+" operator between the first two characters and then put "" operator between the last two characters.)
 
-
 Notes:
-
 
 Suggested time in interview: 40 minutes.
 The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
 
 2. OLD - Palindromic Decomposition - OLD
- 
-
 Palindromic Decomposition
 
- 
-
- 
-
-Problem Statement:
-
- 
+Problem Statement: 
 
 A Palindromic Decomposition of string, is a decomposition of the string into sub-strings, such that all those sub-strings are valid palindromes.
-
- 
-
-Given a string s, you have to find ALL possible palindromic decompositions of it.
-
- 
+Given a string s, you have to find ALL possible palindromic decompositions of it. 
 
 Input Format:
-
- 
-
-There is only one argument denoting string s.
-
- 
+There is only one argument denoting string s. 
 
 Output Format:
-
- 
-
-Return array of string containing ALL the palindromic decompositions. 
-
- 
-
+Return array of string containing ALL the palindromic decompositions.
 To differentiate sub-strings in the decomposed string add '|' between them. (Look at the sample test cases for more clarity.)
+You need not to worry about the order of strings in your output array. Like for s = "aa", arrays ["a|a", "aa"] and ["aa", "a|a"] both will be accepted.
+ (Also note that string itself is also a sub-string.)
 
- 
-
-You need not to worry about the order of strings in your output array. Like for s = "aa", arrays ["a|a", "aa"] and ["aa", "a|a"] both will be accepted. (Also note that string itself is also a sub-string.)
-
- 
-
-Constraints:
-
- 
+Constraints: 
 
 1 <= |s| <= 20
 s only contains lowercase letters ('a' - 'z').
 You have to return ALL palindromic decompositions possible.
- 
 
 Sample Test Cases:
-
- 
-
 Sample Input:
 
- 
-
-"abracadabra"
-
- 
+"abracadabra" 
 
 Sample Output:
-
- 
-
 [
-
     "a|b|r|a|c|a|d|a|b|r|a",
 
     "a|b|r|a|c|ada|b|r|a",
 
     "a|b|r|aca|d|a|b|r|a"
-
 ]
-
- 
-
 Notes:
 
 

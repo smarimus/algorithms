@@ -24,7 +24,7 @@ public class SubSetString {
 		char[] ch1 = {'a','b','c'};
 		char[] ch2 = {'d','e','p'};
 		char[] ch = {'2','4','5'};
-		printSubsetsMain(ch);
+		printSubsetsMain(ch2);
 		
 	}
 	
@@ -74,6 +74,7 @@ public class SubSetString {
 	}
 	static void print(char[] output, int k){
 		//Print output[0...k-1]
+		System.out.print(k + " ");
 		for (int z = 0; z < k; z++) {
 			System.out.print("" + output[z] + " ");
 		}

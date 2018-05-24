@@ -55,7 +55,8 @@ Suggested time in interview: 30 minutes.
 The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
 
 3. Making Change
-You are given n types of coin denominations of values v(1) < v(2) < ... < v(n) (all integers). Give an algorithm which makes change for an amount of money C with as few coins as possible. 
+You are given n types of coin denominations of values v(1) < v(2) < ... < v(n) (all integers). 
+Give an algorithm which makes change for an amount of money C with as few coins as possible. 
 
  
 
@@ -130,7 +131,8 @@ Coins given: 8, 15, 3, 7.
 
  
 
-Player 1 can start two different ways: either picking 8 or picking 7. Depending on the choice s/he makes, the end reward will be different. We want to find the maximum reward the first player can collect.
+Player 1 can start two different ways: either picking 8 or picking 7. Depending on the choice s/he makes, the end reward will be different.
+ We want to find the maximum reward the first player can collect.
 
  
 
@@ -164,7 +166,10 @@ Solution: http://www.geeksforgeeks.org/dynamic-programming-set-31-optimal-strate
 
 Notes:
 Suggested time in interview: 30 minutes.
-The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework 
+i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, 
+what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. 
+Take your time, but limit yourself to 2 one hour sessions for most problems.
 
 5. Knight's tour!
 Given a phone keypad as shown below:
@@ -192,7 +197,8 @@ Solution: http://stackoverflow.com/questions/2893470/generate-10-digit-number-us
 
  
 
-There are n stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time. Count the number of ways, the person can reach the top.
+There are n stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time. 
+Count the number of ways, the person can reach the top.
 
  
 
@@ -209,14 +215,17 @@ Output: 5
 (1, 1, 1, 1), (1, 1, 2), (2, 1, 1), (1, 2, 1), (2, 2)
  
 
-Solve the problem for general case i.e. For N stairs, and different kinds of steps that can be taken (e.g. instead of only 1 or 2 steps, it could be 2, 3 and 5 steps at a time)
+Solve the problem for general case i.e. For N stairs, and different kinds of steps that can be taken (e.g. instead of only 1 or 2 steps, 
+it could be 2, 3 and 5 steps at a time)
 
  
 
 Source and Solution: http://www.geeksforgeeks.org/count-ways-reach-nth-stair/
 
 7. Robbery
-There are n houses built in a line, each of which contains some value in it. A thief is going to steal the maximal value in these houses, but he cannot steal in two adjacent houses because the owner of a stolen house will tell his two neighbors on the left and right side. What is the maximal stolen value?
+There are n houses built in a line, each of which contains some value in it. A thief is going to steal the maximal value in these houses, 
+but he cannot steal in two adjacent houses because the owner of a stolen house will tell his two neighbors on the left and right side.
+ What is the maximal stolen value?
 
 
 For example, if there are four houses with values {6, 1, 2, 7}, the maximal stolen value is 13 when the first and fourth houses are stolen.

@@ -364,7 +364,9 @@ Explanation 3:
 4) root, root->right, root->right->left
 5) root, root->left, root->right
  
-If you keep doing this, it will form a series called Catalan numbers. One can simply lookup the formula for Catalan numbers and write code for it. But that's not how we want to do this. We want to do this by understanding the underlying recursion. The recursion is based on tree-topology only, as you can see by examples above, contents of the nodes of the tree do not matter.
+If you keep doing this, it will form a series called Catalan numbers. One can simply lookup the formula for Catalan numbers and write code for it.
+ But that's not how we want to do this. We want to do this by understanding the underlying recursion. 
+ The recursion is based on tree-topology only, as you can see by examples above, contents of the nodes of the tree do not matter.
 
 Notes:
 

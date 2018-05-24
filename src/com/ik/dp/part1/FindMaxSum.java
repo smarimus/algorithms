@@ -16,6 +16,10 @@ public class FindMaxSum {
 		System.out.println(findMaxSumDP(b, cache));
 		
 		System.out.println(maxSumIterative(b));
+		
+		System.out.println(Integer.MAX_VALUE +1);
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE);
 	}
 	
 	// Recursion

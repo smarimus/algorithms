@@ -42,6 +42,7 @@ public class SubSetString {
 		char[] out = new char[inp.length];
 		printSubsets(inp, 0, out, 0);
 	}
+	
 	static void printSubsets(char[] array, int i, char[]output, int k) {
 		if (i == array.length){
             print(output, k);return;

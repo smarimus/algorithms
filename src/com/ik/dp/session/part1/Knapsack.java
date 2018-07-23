@@ -74,6 +74,18 @@ public class Knapsack {
 	 * both space and time complexity, which is identical in space and time
 	 * complexity to our previous solution. We create an nxW array and iterate
 	 * over the entire array.
+	 * 
+	 * 
+	 * maxEndingHere = 0;
+	 * maxSoFar=3;
+	 * 
+	 * 0+1 = 1
+	 * 1+-2 = -1 
+	 * 0+2 = 2
+	 * 2+1 = 3
+	 * 3+-1 = 2 
+	 * 
+	 * 
 	 */
 	
 }

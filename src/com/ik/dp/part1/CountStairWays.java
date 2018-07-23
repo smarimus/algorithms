@@ -9,7 +9,6 @@ public class CountStairWays {
 	
 	
 	public static int countSteps(int n, int steps){
-		
 		if(n == 0)
 			return 1;
 		if(n <0 )
@@ -23,5 +22,4 @@ public class CountStairWays {
 		}
 		return results;
 	}
-	
 }

@@ -10,6 +10,7 @@ public class ArrayProduct {
 	}
 	
 	//Input : [1, 2, 3, 4, 5]	 Output: [(2*3*4*5), (1*3*4*5), (1*2*4*5), (1*2*3*5), (1*2*3*4)]
+	// 120, 60, 40, 30, 24
 	static int[] productArray(int[] a){
 		
 		int[] products_below = new int[a.length];

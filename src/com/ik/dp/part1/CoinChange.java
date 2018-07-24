@@ -1,7 +1,6 @@
 package com.ik.dp.part1;
 
 public class CoinChange {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		/*int[] d = {2, 9, 13};
@@ -18,7 +17,6 @@ public class CoinChange {
 		
 		int result=Integer.MAX_VALUE;
 		for(int i=0; i < d.length; i++){
-			
 			if(d[i] <= k){
 				int subRes = coinChangeB((k - d[i]) , d);
 				if(subRes != Integer.MAX_VALUE){
@@ -37,14 +35,11 @@ public class CoinChange {
 			return 0;
 		
 		if(index > a.length) return 0;
-		
 		return Integer.min(coinChange(a, index, k-a[index]), coinChange(a, index+1, k-a[index]));
 	}
 	
 	// D 12 C = {13} 
-	
 	public static int coinChage(int[] a, int k){
 		return coinChange(a, 0, k);
 	}
-
 }

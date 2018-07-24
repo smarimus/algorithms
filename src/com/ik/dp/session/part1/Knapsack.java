@@ -80,7 +80,6 @@ public class Knapsack {
 22 = max(16 (not including), 10+12 (including))
 
 	
-	*/
 	/*
 	 * It is now easy to reason through how to solve our problem iteratively (
 	 * g. 20). 
@@ -110,5 +109,17 @@ public class Knapsack {
 	 * complexity to our previous solution. We create an nxW array and iterate
 	 * over the entire array.
 	 * 
-	*/
+	 * 
+	 * maxEndingHere = 0;
+	 * maxSoFar=3;
+	 * 
+	 * 0+1 = 1
+	 * 1+-2 = -1 
+	 * 0+2 = 2
+	 * 2+1 = 3
+	 * 3+-1 = 2 
+	 * 
+	 * 
+	 */
+	
 }

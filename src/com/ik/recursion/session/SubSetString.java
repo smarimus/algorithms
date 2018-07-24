@@ -33,7 +33,9 @@ public class SubSetString {
 			//System.out.println(soFar);
 			list.add(soFar);
 		}else{
+			// not choose
 			subSet(soFar, rest.substring(1), list);
+			// choose
 			subSet(soFar + rest.charAt(0), rest.substring(1), list);
 		}
 	}

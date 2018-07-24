@@ -26,7 +26,7 @@ public class TriesAPI {
 		Trie curr = root;
 		for (int i = 0; i < c.length; i++) {
 			int index = c[i] - 'a' ;
-			System.out.println(index);
+			System.out.println(index + "	" + c[i] + "  "+ 'a');
 			Trie obj = curr.node[index];
 			if(obj == null){
 				Trie tri = new Trie();
@@ -48,9 +48,9 @@ public class TriesAPI {
 			int index =  c - 'a' ;
 			System.out.println(index);
 			Trie node = cur.node[index];
-			if(node == null)
+			if(node == null){
 				return false;
-			else{
+			}else{
 				cur = node;
 			}
 		}

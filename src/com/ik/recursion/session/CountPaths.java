@@ -20,7 +20,7 @@ public class CountPaths {
 				{4,6,2},
 				{7,0,1}};
 		
-		System.out.println(countPath(a1));
+		System.out.println(countPath(a));
 	}
 	
 	static int countPath(int[][] a){

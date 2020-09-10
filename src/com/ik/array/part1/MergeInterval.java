@@ -16,6 +16,9 @@ public class MergeInterval {
 			System.out.println(s);
 		}
 		
+		String s = new String();
+		int c = s.charAt(0);
+		
 
 		Interval[] intervals = new Interval[4];
 		//intervals[0] = new Interval(1, 9);

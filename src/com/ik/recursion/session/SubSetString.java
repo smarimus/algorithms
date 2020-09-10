@@ -21,10 +21,10 @@ public class SubSetString {
 		long endTime = System.currentTimeMillis();
 		System.out.println("That took " + TimeUnit.MILLISECONDS.toSeconds(endTime - startTime) + " seconds");
 		
-		char[] ch1 = {'a','b','c'};
+		char[] ch1 = {'a','b','c','d','f'};
 		char[] ch2 = {'d','e','p'};
-		char[] ch = {'2','4','5'};
-		printSubsetsMain(ch2);
+		char[] ch = {'1','2','2'};
+		printSubsetsMain(ch);
 		
 	}
 	
@@ -49,9 +49,10 @@ public class SubSetString {
 		if (i == array.length){
             print(output, k);return;
          }
-		printSubsets(array, i+1, output, k);
+		
 		output[k] = array[i]; 
 		printSubsets(array, i+1, output, k+1);
+		printSubsets(array, i+1, output, k);
 	}
 	
 	static void printSubsetsWithGivenSum(char[] array, int i, char[]output, int k, int sum) {

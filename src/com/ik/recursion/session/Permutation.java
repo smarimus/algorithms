@@ -51,7 +51,6 @@ public class Permutation {
 	   
 	   for (int j = i; j < a.length; j++) {
 		   swap(a, i, j);
-		  
 		   permutation(a, i+1);
 		   swap(a, i, j);
 	   }

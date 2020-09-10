@@ -11,19 +11,19 @@ Given a snake and ladder rectangular MxN board-game, find the minimum number of 
 
  
 
-Rules are as usual: If after a dice-throw, the player reaches a cell where the ladder starts, the player has to climb up that ladder and if the player reaches a cell that has the mouth of the snake, s/he has to go down to the tail of snake.
+Rules are as usual: If after a dice-throw, the player reaches a cell where the ladder starts, 
+the player has to climb up that ladder and if the player reaches a cell that has the mouth of the snake, s/he has to go down to the tail of snake.
 
  
 
-For example, in the board given below, it will take minimum 4 throws to reach from 1 to 36. That can be done with the following sequence of throws: (1,6,4,1). There may be more such sequences of the same length viz. (4,2,6,4) etc. 
+For example, in the board given below, it will take minimum 4 throws to reach from 1 to 36. 
+That can be done with the following sequence of throws: (1,6,4,1). There may be more such sequences of the same length viz. (4,2,6,4) etc. 
 
- 
+  
 
-
-
- 
-
-Please hard-code input game boards as your test-cases. There are different ways of doing so. e.g. one simple way, is to represent it using a one-dimensional array of length MxN, with each element representing a cell. Values in the array, are the destination cell id for snakes (lower numbers) and ladders (higher numbers).
+Please hard-code input game boards as your test-cases. There are different ways of doing so. 
+e.g. one simple way, is to represent it using a one-dimensional array of length MxN, 
+with each element representing a cell. Values in the array, are the destination cell id for snakes (lower numbers) and ladders (higher numbers).
 
  
 
@@ -78,7 +78,8 @@ Your code should output a space-separated list of the basin sizes, in descending
 
 Solution
 
-The problem and the solution both, are from here: http://codereview.stackexchange.com/questions/38500/rainfall-challenge Please be sure to read author's solution and criticism of the answer. It's very instructive.
+The problem and the solution both, are from here: http://codereview.stackexchange.com/questions/38500/rainfall-challenge Please be sure to read author's solution and criticism of the answer. 
+It's very instructive.
 
 A few examples are below:
 
@@ -140,23 +141,17 @@ The “Suggested Time” is the time expected to complete this question during a
 4. Reverse Index
 Given a text file and a word, find the positions that the word occurs in the file. We’ll be asked to find the positions of many words in the same file. i.e. think precomputing with a reverse index.
 
- 
+
 
 Implement the solution using a HashTable and a Trie. Write full implementation of Trie. You can use existing implementation of a HashTable.
 
- 
+
 
 [This is almost a mini-project. Best done outside HackerRank. If you want to do inside, you'll need to write to a file first before reading from it: https://www.hackerrank.com/environment/writing-to-file]
 
  
 
- 
-
- 
-
 Solution: http://www.ardendertat.com/2011/12/20/programming-interview-questions-23-find-word-positions-in-text/
-
- 
 
  
 
@@ -192,7 +187,9 @@ There are six arguments.
 
  
 
-First one is an integer dag_nodes, second one is an array dag_from, third one is an array dag_to and forth one is an array dag_weight. These four arguments cumulatively describes the weighted DAG. dag_nodes describes the total number of nodes in the given graph and there is an edge from dag_from[i] node to dag_to[i] node with length dag_weight[i].
+First one is an integer dag_nodes, second one is an array dag_from, third one is an array dag_to and forth one is an array dag_weight. 
+These four arguments cumulatively describes the weighted DAG. dag_nodes describes the total number of nodes in the given graph and 
+there is an edge from dag_from[i] node to dag_to[i] node with length dag_weight[i].
 
  
 

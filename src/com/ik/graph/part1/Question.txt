@@ -12,52 +12,30 @@ Q5	Shortest Path In 2D Grid With Keys And Doors	Approximate Solution	not answere
 Knight's Tour On A Chess Board
 
  
-
- 
-
 Problem Statement:
 
  
-
 You are given a rows * cols chessboard and a knight that moves like in normal chess. 
 
- 
 
 Currently knight is at starting position denoted by start_row th row and start_col th col, and want to reach at ending position denoted by end_row th row and end_col th col.  
-
- 
 
 The goal is to calculate the minimum number of moves that the knight needs to take to get from starting position to ending position.
 
  
-
 start_row, start_col, end_row and end_col are 0-indexed. 
-
- 
 
 Input Format:
 
- 
-
 There are six arguments. First is an integer denoting rows, second is an integer denoting cols, third is an integer denoting start_row, fourth is an integer denoting start_col, fifth is an integer denoting end_row and sixth is an integer denoting end_col.
-
- 
 
 Output Format:
 
- 
-
 Return an integer.
-
- 
 
 If it is possible to reach from starting position to ending position then return minimum number of moves that the knight needs to take to get from starting position to ending position.
 
- 
-
 If it is not possible to reach from starting position to ending position then return -1.
-
- 
 
 Constraints:
 
@@ -90,9 +68,7 @@ end_col = 1
 
  
 
-Sample Output:
-
- 
+Sample Output: 
 
 3
 
@@ -109,9 +85,7 @@ Explanation:
 (0, 0) -> (1, 2) -> (3, 3) -> (4, 1). 
 
 2. Topological Sort (alien dictionary problem)
-Given a sorted dictionary of an alien language, find order of characters.
-
- 
+Given a sorted dictionary of an alien language, find order of characters. 
 
 Example-1:
 
@@ -121,36 +95,13 @@ Output: Order of characters is 'b', 'd', 'a', 'c'
 
  
 
-Note that words are sorted and in the given language. "baa" comes before "abcd", therefore 'b' is before 'a' in output. 
-
- 
+Note that words are sorted and in the given language. "baa" comes before "abcd", therefore 'b' is before 'a' in output.
 
 Example-2:
 
 Input: words[] = {"caa", "aaa", "aab"}
 
 Output: Order of characters is 'c', 'a', 'b'
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
 
 Solution: 
 
@@ -167,10 +118,7 @@ The “Suggested Time” is the time expected to complete this question during a
 3. Convert string from a to b, using a dictionary of words
 This is a problem, that can be modeled as a Graph problem. It's a simplified version of the famous Edit Distance problem (which is DP).
 
- 
-
 You have a dictionary of words and two strings a and b.
-
 How can one convert a to b by changing only one character at a time and making sure that all the intermediate words are in the dictionary?
 
 Example:
@@ -182,13 +130,6 @@ solution:
 
 "bat" -> "bad" -> "had"
 
- 
-
- 
-
- 
-
- 
 
 Solution: http://stackoverflow.com/questions/17514999/convert-string-a-to-b-using-a-dictionary-of-words
 
@@ -196,7 +137,10 @@ Solution: http://stackoverflow.com/questions/17514999/convert-string-a-to-b-usin
 
 Notes:
 Suggested time in interview: 30 minutes.
-The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework 
+i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, 
+what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. 
+Take your time, but limit yourself to 2 one hour sessions for most problems.
 
 4. Graph Representations
  
@@ -315,12 +259,7 @@ It is guaranteed that there exists a path from start to goal.
  
 
 Sample Test Case:
-
- 
-
 Sample Input:
-
- 
 
 ...B
 .b#.

@@ -1,6 +1,6 @@
 package com.ik.array.part3;
 
-public class MaximumProductSubarray {
+public class MaxSumContiguousSubArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -9,11 +9,30 @@ public class MaximumProductSubarray {
         int [] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
 		
 		System.out.println(maxProductSubset_N_2(arr));
-
 	}
 	//
 	static int maxProductSubset_N_2(int arr[]){
-		return 0;
+		
+		int maxSum = Integer.MIN_VALUE;
+		
+		for (int i = 0; i < arr.length; i++) {
+			int top = arr[i];
+			int newSum=0;
+			
+			if(top > maxSum){
+				maxSum = top;
+				newSum=top;
+			}
+			
+			for (int j = i+1; j < arr.length; j++) {
+				int inner = arr[j];
+				newSum = newSum + inner;
+				
+				if(newSum > maxSum)
+					maxSum = newSum;
+			}
+		}
+		return maxSum;
 	}
 	
 	static int maxProductSubset_O_N(int arr[]){
@@ -56,4 +75,5 @@ public class MaximumProductSubarray {
 	 * 	 		maxSoFar = maxEndingHere
 	 *  
 	 */
+
 }

@@ -1,12 +1,18 @@
-package com.leetcode;
+package com.leetcode.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestSubstringWithoutRepeatingCharacter {
-
+public class LongestSubstringWithoutRepeatingCharacters_3 {
+	
 	public static void main(String[] args) {
-		String str = "ABDEFGABEF";
+		//String str = "ABDEFGABEF";
+		//String str = "pwwkew";
+		String str = "abcabcbb";
+		//String str = "dvdf";
+		//String str = "asjrgapa";
+		//String str = "jbpnbwwd";
+		
         System.out.println("The input string is "+str);
         int len = lengthOfLongestSubstring(str);
         System.out.println("The length of "
@@ -19,24 +25,24 @@ public class LongestSubstringWithoutRepeatingCharacter {
         
 		int previousLen = 0;
 		int currentLen =0;
+		
 		for (int i = 0; i < s.length(); i++) {
-			char ch = s.charAt(i);
-			
-			if(chMap.get(ch) == null){
-				chMap.put(ch, ch);
-				currentLen++;
-			}else{
-				chMap = new HashMap<Character, Character>();
-				chMap.put(ch, ch);
-				if(currentLen > previousLen){
-					previousLen = currentLen; 
-					currentLen = 0;
+			for (int j = i; j < s.length(); j++) {
+				char ch = s.charAt(j);
+				
+				if(chMap.get(ch) == null){
+					chMap.put(ch, ch);	
+					currentLen++;
+					continue;
 				}
+				if(currentLen > previousLen){
+					previousLen = currentLen;	
+				}
+				currentLen = 0;
+				chMap = new HashMap<Character, Character>();
+				break;
 			}
 		}
-		if(currentLen > previousLen)
-			previousLen = currentLen;
-		
 		return previousLen;
     }
 

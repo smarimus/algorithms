@@ -42,4 +42,72 @@ public class CoinChange {
 	public static int coinChage(int[] a, int k){
 		return coinChange(a, 0, k);
 	}
+	
+	public static int cointChangeDP(int sum, int[] coin){
+		int[] cache = new int[sum+1];
+		
+		for (int i = 1; i < sum; i++) {
+			cache[i] = Integer.MAX_VALUE;	
+		}
+		
+		int result = Integer.MAX_VALUE;
+		
+		// Iterate the sum value
+		for (int i = 1; i < sum; i++) {
+			
+			// Iterate the coins
+			for (int j = 0; j < coin.length; j++) {
+				if(coin[j] >= i){
+					cache[i] = Math.min(cache[i], cache[i-coin[j]] +  1);	
+				}
+			}
+		}
+		return cache[sum];
+	}
+	
+	public static int cointChangeDP1(int sum, int[] coin){
+		int[] cache = new int[sum+1];
+		
+		int result = Integer.MAX_VALUE;
+		
+		// Iterate the sum value
+		for (int i = 1; i < sum; i++) {
+			
+			// Iterate the coins
+			for (int j = 0; j < coin.length; j++) {
+				if(coin[j] >= i){
+					result = Math.min(result , cache[i-coin[j]] +  1);	
+				}
+			}
+			cache[i] = result;
+		}
+		
+		return cache[sum];
+	}
+	
+	// Bottom up dynamic programming solution. 
+	// Iteratively compute number of coins for 
+	// larger and larger amounts of change 
+	
+	public int makeChange(int c, int[] coins) {
+		
+		int[] cache = new int[c + 1];
+		for (int i = 1; i <= c; i++) {
+			int minCoins = Integer.MAX_VALUE;
+			// Try removing each coin from the total
+			// and see which requires the fewest
+			// extra coins
+			for (int coin : coins) {
+				if (i - coin >= 0) {
+					int currCoins = cache[i-coin] + 1;
+					if (currCoins < minCoins) {
+						minCoins = currCoins;
+					}
+				}
+			}
+			cache[i] = minCoins;
+		}
+		return cache[c];
+	}
+	
 }

@@ -29,7 +29,7 @@ public class ZeroSum {
 			List<Integer> subset = new ArrayList<Integer>();
 			
 			subset.add(a[i]);
-			
+				
 			if(first == k){
 				list.add(subset); continue;
 			}

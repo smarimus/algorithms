@@ -57,28 +57,6 @@ public class EncodeDecodeString {
 		return sb.toString();
 	}
 	
-	static String compress1(String s){
-		char[] chars = s.toCharArray();
-		
-		StringBuffer sb = new StringBuffer();
-		int count = 0;
-		for (int i = 0; i < chars.length; i++) {
-			char cur = chars[i];
-			
-			if(i+1 < chars.length && cur == chars[i+1]){
-				count++;
-				continue;
-			}else{
-				if(count > 0){
-					sb.append(count+1);
-					count=0;
-				}
-				sb.append(cur);
-			}
-		}
-		return sb.toString();
-	}
-	
 	static int parseInt(char s){
 		int result =0;
 		try{
@@ -107,6 +85,29 @@ public class EncodeDecodeString {
 			}
 			
 			sb.append(val);
+		}
+		return sb.toString();
+	}
+	
+	
+	static String compress1(String s){
+		char[] chars = s.toCharArray();
+		
+		StringBuffer sb = new StringBuffer();
+		int count = 0;
+		for (int i = 0; i < chars.length; i++) {
+			char cur = chars[i];
+			
+			if(i+1 < chars.length && cur == chars[i+1]){
+				count++;
+				continue;
+			}else{
+				if(count > 0){
+					sb.append(count+1);
+					count=0;
+				}
+				sb.append(cur);
+			}
 		}
 		return sb.toString();
 	}

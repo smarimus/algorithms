@@ -29,8 +29,8 @@ public class KnightTour {
 		System.out.println("sd" + backRef.get(dest));
 		printPath(backRef, src, dest);
 		
-		
-		
+		int k =-2;
+		System.out.println(k+1);
 	}
 	
 	static Node shortestPath(Node src, Node dest, int n, Map<Node, Node> backRef){

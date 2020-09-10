@@ -4,15 +4,21 @@ public class Knapsack {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Item[] items = {
+		/*Item[] items = {
 			new Item(10, 1),
 			new Item(20, 1),
 			new Item(2, 6),	
 			new Item(2, 10),	
 			new Item(3, 12)
-		};
+		};*/
 		
-		System.out.println(knapsack(items, 5));
+		Item[] items = {
+				new Item(2, 6),
+				new Item(2, 10),
+				new Item(3, 12),
+			};
+		
+		//System.out.println(knapsack(items, 5));
 		System.out.println(knapsackDP(items, 5));
 	}
 	

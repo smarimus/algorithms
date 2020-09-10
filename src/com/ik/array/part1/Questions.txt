@@ -8,7 +8,7 @@ Q6	SumZero	Coding	not answered	Solve Question
 
 
 1.Array product
-Array Product
+Array Product1
 
  
 

@@ -7,9 +7,6 @@ public class DeleteNodeBST {
 
 	}
 	
-	public TreeNode deleteNode(TreeNode root, int key) {
-		
-    }
 	
 	boolean found = false;
 	TreeNode result;

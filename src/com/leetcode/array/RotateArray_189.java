@@ -1,7 +1,5 @@
 package com.leetcode.array;
 
-import java.util.Arrays;
-
 public class RotateArray_189 {
 	public static void rotate1(int[] nums, int K) {
 		

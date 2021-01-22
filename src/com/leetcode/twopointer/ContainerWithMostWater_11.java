@@ -16,7 +16,9 @@ public class ContainerWithMostWater_11 {
 		Result result = new Result();
 
 		for (int left = 0; left < height.length; left++) {
+			
 			for (int right = height.length - 1; right > left; right--) {
+				
 				int value = ((right - left)) * (Math.min(height[right], height[left]));
 
 				if (result.result < value) {

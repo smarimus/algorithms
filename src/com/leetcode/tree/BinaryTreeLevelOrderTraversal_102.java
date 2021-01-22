@@ -43,6 +43,7 @@ public class BinaryTreeLevelOrderTraversal_102 {
         List<Integer> subList = new ArrayList<>();
         boolean sep = false;
         
+        
         while(!q.isEmpty()){
             TreeNode val = q.poll();
             subList.add(val.val);

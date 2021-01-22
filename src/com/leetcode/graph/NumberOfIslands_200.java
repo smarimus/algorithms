@@ -59,19 +59,26 @@ public class NumberOfIslands_200 {
 				continue;
 			}
 
+			//row
 			if (c.i + 1 < grid.length && grid[c.i + 1][c.j] == '1' && visited[c.i + 1][c.j] == false) {
 				deque.add(new Pair(c.i + 1, c.j));
 				visited[c.i + 1][c.j] = true;
 				// System.out.println(c.i + 1 +", " + c.j);
 			}
+			
+			//col
 			if (c.j + 1 < grid[0].length && grid[c.i][c.j + 1] == '1' && visited[c.i][c.j + 1] == false) {
 				deque.add(new Pair(c.i, c.j + 1));
 				visited[c.i][c.j + 1] = true;
 			}
+			
+			//row
 			if (c.i - 1 >= 0 && grid[c.i - 1][c.j] == '1' && visited[c.i - 1][c.j] == false) {
 				deque.add(new Pair(c.i - 1, c.j));
 				visited[c.i - 1][c.j] = true;
 			}
+			
+			//col
 			if (c.j - 1 >= 0 && grid[c.i][c.j - 1] == '1' && visited[c.i][c.j - 1] == false) {
 				deque.add(new Pair(c.i, c.j - 1));
 				visited[c.i][c.j - 1] = true;
@@ -126,6 +133,7 @@ public class NumberOfIslands_200 {
 	}
 
 	public static void DFS1(char[][] grid, boolean[][] visited, int i, int j) {
+		
 		if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || visited[i][j] == true) {
 			return;
 		}

@@ -1,6 +1,6 @@
 package com.ik.tree.part1;
 
-import com.ik.tree.session.*;
+import com.ik.tree.session.BSTUtil;
 import com.ik.tree.session.Node;
 
 public class BSTFromSortArray {

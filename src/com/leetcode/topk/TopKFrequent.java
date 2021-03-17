@@ -7,6 +7,7 @@ public class TopKFrequent {
 
 	}
 
+<<<<<<< HEAD
 	public int[] topKFrequent(int[] nums, int k) {
 		
 		return null;
@@ -18,5 +19,8 @@ public class TopKFrequent {
 		return 0;
 		
 	}
+=======
+	
+>>>>>>> 0aca3163791fc5989b087c53a2ed2590183e786c
 
 }

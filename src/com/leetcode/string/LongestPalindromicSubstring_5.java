@@ -102,6 +102,7 @@ public class LongestPalindromicSubstring_5 {
 				rs.count = end-begin; rs.start=begin; rs.end=end;
 			}
 			
+			
 			begin = i;
 			end = i+1;
 			

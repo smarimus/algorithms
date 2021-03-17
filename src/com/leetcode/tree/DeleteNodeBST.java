@@ -7,10 +7,13 @@ public class DeleteNodeBST {
 
 	}
 	
+<<<<<<< HEAD
 	public TreeNode deleteNode(TreeNode root, int key) {
 	
 		return null;
     }
+=======
+>>>>>>> 0aca3163791fc5989b087c53a2ed2590183e786c
 	
 	boolean found = false;
 	TreeNode result;

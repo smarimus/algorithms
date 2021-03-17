@@ -1,0 +1,49 @@
+https://stackoverflow.com/questions/31851548/flatten-nested-arrays-in-java
+
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ * 
+  Given an array of arrays of ints, flatten the array
+  [ [1], [2,3], [4], [5, 6, 7]] -> [1,2,3,4,5,6,7]
+
+  [1 , [2], [3,[4]], [[[5]]], [6,7], []] -> [1,2,3,4,5,6,7]
+
+ * If you need more classes, simply define them inline.
+ */
+
+class Solution {
+  public static void main(String[] args) {
+    
+    // [1 , [2], [3,[4]], [[[5]]], [6,7], []]
+    
+   Object[] input = {1, new Object[]{2}, new Object[]{3, new Object[]{4} }};
+   Object[] results = flattenList(input);
+    
+    for(Object res :results){
+      System.out.println((Integer)res);
+    }
+   
+  }
+  
+  public static Integer[] flattenList(Object[] inputArray ){
+    
+    if(inputArray == null)
+      return null;
+    
+    
+    List<Integer> flatList = new ArrayList<>();
+    
+    for(Object item: inputArray){
+      
+      if(item instanceof Integer){
+        flatList.add((Integer) item);
+        
+      }else if(item instanceof Object[]){
+        flatList.addAll( Arrays.asList( flattenList((Object[])item)) );
+      }
+    }
+    return flatList.toArray(new Integer[flatList.size()]);
+  }
+  
+}

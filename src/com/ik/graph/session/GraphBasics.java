@@ -1,7 +1,9 @@
 package com.ik.graph.session;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -9,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-
-import sun.misc.Queue;
 
 
 //https://algs4.cs.princeton.edu/41graph/Graph.java.html
@@ -108,11 +108,11 @@ public class GraphBasics {
 		
 		HashMap<String, Boolean> visited = new HashMap<String, Boolean>();
 		
-		Queue<Node<String>> st = new Queue<Node<String>>();
-		st.enqueue(node);
+		Deque<Node<String>> st = new ArrayDeque<Node<String>>();
+		st.add(node);
 		
 		while(!st.isEmpty()){
-			Node<String> n = st.dequeue();
+			Node<String> n = st.poll();
 			System.out.print(n.value + ",");
 			
 			if(visited.get(n.value) != null){
@@ -126,7 +126,7 @@ public class GraphBasics {
 				Iterator<Node<String>> it = childs.iterator();
 				while(it.hasNext()){
 					Node<String> ch = it.next();
-					st.enqueue(ch);
+					st.add(ch);
 				}
 			}
 		}
@@ -156,13 +156,13 @@ public class GraphBasics {
 	static List<String> shortestPath(Node<String> node, String s, String e) throws InterruptedException{
 		Map<String, String> backRef = new HashMap<String, String>();
 		
-		Queue<Node<String>> st = new Queue<Node<String>>();
-		st.enqueue(node);
+		Deque<Node<String>> st = new ArrayDeque<Node<String>>();
+		st.add(node);
 		
 		//backRef.put(s, null);
 		
 		while(!st.isEmpty()){
-			Node<String> n = st.dequeue();
+			Node<String> n = st.poll();
 			//System.out.print(n.value + ",");
 			
 			if(n.value.equals(e))break;
@@ -180,7 +180,7 @@ public class GraphBasics {
 						continue;
 					
 					backRef.put(ch.value, n.value);
-					st.enqueue(ch);
+					st.add(ch);
 				}
 			}
 		}

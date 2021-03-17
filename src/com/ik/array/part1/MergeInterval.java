@@ -102,7 +102,7 @@ public class MergeInterval {
 				
 				if(firstEnd < secondStart){
 					continue;
-				}	
+				}
 				
 				if(firstEnd < secondEnd){
 					

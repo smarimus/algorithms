@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.ik.graph.session.KnightTour.Node;
-
 public class TwoDimShorestPath {
 
 	public static void main(String[] args) {

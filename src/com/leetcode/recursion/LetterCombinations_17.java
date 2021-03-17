@@ -17,6 +17,13 @@ public class LetterCombinations_17 {
 		int num2 = ch2;
 		System.out.println("ASCII value of char "+ch+ " is: "+Character.getNumericValue(num));
 		System.out.println("ASCII value of char "+ch2+ " is: "+Character.getNumericValue(num2));*/
+		
+		boolean isNumber = true;
+		try{
+			System.out.println(Integer.parseInt("100a"));;
+		}catch(NumberFormatException nf){
+			isNumber = false;
+		}
 	}
 	
 	public static List<String> letterCombinations(String digits) {

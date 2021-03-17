@@ -1,24 +1,35 @@
 package com.leetcode.tree;
 
-public class ValidBST_98 {
+public class KthSmallest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public boolean isValidBST(TreeNode root) {
-		return isValidBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+		Integer count = 0;
+		Integer res;
+
+	public int kthSmallest(TreeNode root, int k) {
+		help(root, k);
+		return res;
 	}
 
-	private boolean isValidBST(TreeNode p, double min, double max) {
-		if (p == null)
-			return true;
+	public void help(TreeNode root, int k) {
 
-		if (p.val <= min || p.val >= max)
-			return false;
+		if (root == null) {
+			return;
+		}
 
-		return isValidBST(p.left, min, p.val) && isValidBST(p.right, p.val, max);
+		kthSmallest(root.left, k);
+		count++;
+		
+		if (count.intValue() == k){
+			res = root.val;
+			return;
+		}
+
+		kthSmallest(root.right, k);
 	}
 
 	public class TreeNode {

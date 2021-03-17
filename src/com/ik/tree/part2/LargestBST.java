@@ -19,7 +19,6 @@ public class LargestBST {
 	 */
 	
 	public static MinMax findLargestBST(Node<Integer> node){
-		
 		// base case
 		if(node == null){
 			return new MinMax();

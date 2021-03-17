@@ -9,7 +9,6 @@ public class PalindromePairs {
             this.i = i;
             this.j = j;
         }
-
         public int i, j;
     }
 

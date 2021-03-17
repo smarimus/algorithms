@@ -1,7 +1,5 @@
 package com.leetcode;
 
-import java.util.Arrays;
-
 public class MergeSortedArray_88 {
 
 	public static void main(String[] args) {

@@ -1,9 +1,12 @@
 package com.interview.karat;
 
 /*
-We have some clickstream data that we gathered on our client's website. Using cookies, we collected snippets of users' anonymized URL histories while they browsed the site. The histories are in chronological order, and no URL was visited more than once per person.
+We have some clickstream data that we gathered on our client's website. 
+Using cookies, we collected snippets of users' anonymized URL histories while they browsed the site. 
+The histories are in chronological order, and no URL was visited more than once per person.
 
-Write a function that takes two users' browsing histories as input and returns the longest contiguous sequence of URLs that appears in both.
+Write a function that takes two users' browsing histories as input and returns the longest contiguous sequence
+ of URLs that appears in both.
 
 Sample input:
 
@@ -69,7 +72,6 @@ public class FindContiguousHistory {
 	}
 	
 	public static List<String> findContiguousHistory(String[] user1, String[] user2) {
-
 		int result = Integer.MIN_VALUE;
 		int start = 0;
 		int end = 0;
@@ -95,13 +97,11 @@ public class FindContiguousHistory {
 				}
 			}
 		}
-
 		List<String> lists = new ArrayList<String>();
 		while (start < end) {
 			lists.add(user1[start]);
 			start++;
 		}
-
 		return lists;
 	}
 }

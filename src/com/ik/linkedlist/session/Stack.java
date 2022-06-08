@@ -16,6 +16,7 @@ public class Stack<T> {
 	
 	public Node<T> pop(){
 		Node<T> result = null;
+		
 		if(top != null){
 			result = top;
 			top = top.next;
@@ -43,6 +44,19 @@ public class Stack<T> {
 		System.out.println(String.valueOf(stack.pop().getValue()));
 		System.out.println(String.valueOf(stack.pop().getValue()));
 		System.out.println(String.valueOf(stack.pop().getValue()));
+		
+		Stack<String> s = new Stack<String>();
+		
+		s.push("Sudhakar");
+		s.push("Shopana");
+		s.push("Nilan");
+		
+		System.out.println(s.pop().getValue());
+		System.out.println(s.peek());
+		System.out.println(s.pop().getValue());
+		System.out.println(s.pop().getValue());
+		s.push("Sudhakar");
+		System.out.println(s.pop().getValue());
 	}
 }
 

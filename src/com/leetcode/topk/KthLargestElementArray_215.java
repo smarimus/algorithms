@@ -2,7 +2,9 @@ package com.leetcode.topk;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.stream.Stream;
 
 public class KthLargestElementArray_215 {
 
@@ -15,6 +17,8 @@ public class KthLargestElementArray_215 {
 	
 	public int findKthLargest(int[] nums, int k) {
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+		
+		Arrays.sort(nums);
 		
 		Arrays.stream(nums).forEach(e ->{
 			maxHeap.add(e);

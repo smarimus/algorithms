@@ -240,8 +240,8 @@ public class MinimumWindowSubstring_76 {
 				}
 				
 				count = map.getOrDefault(c, 0);
-				if(count == 1){
-					map.put(c, count--);
+				map.put(c, count--);
+				if(count == 0){
 					left++;
 					missing=1;
 					break;
@@ -250,4 +250,9 @@ public class MinimumWindowSubstring_76 {
 		}
 		return s.substring(left, right+1);
 	}
+
+	//ADOBECODEBANC
+	//ABC
+
+
 }
